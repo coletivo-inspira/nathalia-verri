@@ -6,8 +6,6 @@ const links = [
   { name: 'Início', href: '#home' },
   { name: 'Sobre', href: '#about' },
   { name: 'Experiência', href: '#experiences' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Formação', href: '#education' },
   { name: 'Contato', href: '#contact' },
 ];
 
