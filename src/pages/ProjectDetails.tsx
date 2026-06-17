@@ -123,7 +123,7 @@ const ProjectDetails = () => {
                 "md:col-span-3 z-30 md:-ml-12 md:-mt-32", 
               ];
 
-              const itemClass = collageClasses[index % 6];
+              const itemClass = collageClasses[i % 6];
 
               // Renderizando a Imagem ou Vídeo
               const MediaContent = isVideo(mediaUrl) ? (
@@ -134,11 +134,11 @@ const ProjectDetails = () => {
 
               return (
                 <motion.div
-                  key={index}
+                  key={i}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, delay: (index % 3) * 0.1 }}
+                  transition={{ duration: 0.8, delay: (i % 3) * 0.1 }}
                   className={`col-span-12 relative ${itemClass} max-md:-mt-10 max-md:first:mt-0 hover:z-[100] group`}
                 >
                   <div className="relative w-full rounded-xl md:rounded-2xl overflow-hidden shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] hover:scale-[1.03] transition-all duration-500 ease-out bg-zinc-100">
