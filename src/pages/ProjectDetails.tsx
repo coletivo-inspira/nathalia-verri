@@ -24,7 +24,7 @@ const ProjectDetails = () => {
   const currentIndex = projects.findIndex((p) => p.id === project.id);
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
-  const isVideo = (url) => {
+  const isVideo = (url: string) => {
     if (typeof url !== 'string') return false;
     return url.match(/\.(mp4|webm)$/i);
   };
@@ -108,7 +108,7 @@ const ProjectDetails = () => {
       <section className="px-6 md:px-12 lg:px-20 pb-40">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-12 gap-y-12 md:gap-y-0">
-            {project.gallery.map((item, index) => {
+            {project.results.map((item: any, i: number) => {
               
               // Extraindo a mídia e o link do nosso novo formato de dados
               const mediaUrl = typeof item === 'string' ? item : item.media;
