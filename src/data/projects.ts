@@ -52,6 +52,41 @@ export const projects = [
       { 
         media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Computador/Café - Aesthetic de rotina
         link: 'https://www.instagram.com/nanathsday/' 
+      },{ 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://videos.pexels.com/video-files/6981410/6981410-uhd_2160_3840_25fps.mp4', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1507120410856-1f35574c3b45?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Computador/Café - Aesthetic de rotina
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://videos.pexels.com/video-files/6981410/6981410-uhd_2160_3840_25fps.mp4', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1507120410856-1f35574c3b45?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Computador/Café - Aesthetic de rotina
+        link: 'https://www.instagram.com/nanathsday/' 
       }
     ],
     content: `

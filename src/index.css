@@ -24,3 +24,161 @@ body {
   background: #ffffff;
   color: #18181b;
 }
+
+.project-page {
+  min-height: 100vh;
+  background: #f8f6f2;
+  overflow-x: auto;
+}
+
+.project-canvas {
+  position: relative;
+  width: 1700px;
+  margin: 0 auto;
+}
+
+.project-sidebar {
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  width: 320px;
+  z-index: 999;
+}
+
+.project-sidebar h1 {
+  font-family: var(--font-playfair);
+  font-size: 58px;
+  line-height: 0.95;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.project-sidebar h2 {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #777;
+}
+
+.project-sidebar p {
+  font-family: var(--font-inter);
+  font-size: 15px;
+  line-height: 1.9;
+  color: #444;
+  white-space: pre-line;
+}
+
+.project-navigation {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-navigation button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-inter);
+}
+
+.floating-card {
+  position: absolute;
+  overflow: hidden;
+  background: white;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.08),
+    0 6px 12px rgba(0,0,0,.04);
+
+  transition:
+    transform .5s ease,
+    box-shadow .5s ease;
+}
+
+.floating-card:hover {
+  transform:
+    translateY(-12px)
+    scale(1.03) !important;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,.12),
+    0 10px 20px rgba(0,0,0,.08);
+}
+
+.floating-card img,
+.floating-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.results-section {
+  background: white;
+  padding: 120px 80px;
+}
+
+.results-header {
+  font-family: var(--font-playfair);
+  font-size: 72px;
+  margin-bottom: 50px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+  gap: 40px;
+}
+
+.result-card {
+  border-top: 1px solid rgba(0,0,0,.15);
+  padding-top: 20px;
+}
+
+.result-card h3 {
+  font-family: var(--font-playfair);
+  font-size: 54px;
+  margin-bottom: 10px;
+}
+
+.result-card p {
+  font-family: var(--font-inter);
+  line-height: 1.7;
+  color: #666;
+}
+
+.project-not-found {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TABLET */
+
+@media (max-width: 1200px) {
+  .project-canvas {
+    width: 1700px;
+    transform: scale(.75);
+    transform-origin: top left;
+  }
+
+  .results-section {
+    display: none;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .project-canvas {
+    width: 1700px;
+    transform: scale(.52);
+    transform-origin: top left;
+  }
+}
