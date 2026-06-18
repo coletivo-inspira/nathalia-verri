@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 
@@ -71,16 +71,24 @@ const ProjectDetails = () => {
   }, [project.id, project.gallery.length]);
 
   // Altura do canvas se adapta dinamicamente para acomodar os cards até o final
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const updateScale = () => { setScale(Math.min(1, window.innerWidth / 1700)); };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
   const maxTop = assignedPositions.length > 0
     ? Math.max(...assignedPositions.map(pos => pos.top)) 
     : 0;
   const canvasHeight = Math.max(1000, maxTop + 800);
 
   return (
-    <div className="min-h-screen bg-[#f8f6f2] text-zinc-900 selection:bg-rose-200 overflow-x-auto relative">
+    <div className="min-h-screen bg-[#f8f6f2] text-zinc-900 selection:bg-rose-200 overflow-x-hidden relative" style={{ height: (canvasHeight * scale) + 'px' }}>
       <div 
-        className="project-canvas relative mx-auto" 
-        style={{ width: '1700px', height: canvasHeight + 'px' }}
+        className="project-canvas absolute" 
+        style={{ width: '1700px', height: canvasHeight + 'px', transform: 'scale(' + scale + ')', transformOrigin: 'top center', left: '50%', marginLeft: '-850px' }}
       >
         {/* SIDEBAR MODERNA COM EFEITO GLASSMORPHISM */}
         <aside className="absolute top-[80px] left-[70px] w-[350px] z-50 bg-[#f8f6f2]/85 backdrop-blur-xl p-10 rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
