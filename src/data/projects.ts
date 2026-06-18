@@ -1,3 +1,14 @@
+import midiaNanathsCover from '../assets/nanaths-day-cover.png';
+import midiaNanaths1 from '../assets/nanaths-day-1.mp4';
+import midiaNanaths2 from '../assets/nanaths-day-2.mp4';
+import midiaNanaths3 from '../assets/nanaths-day-3.mp4';
+import midiaNanaths4 from '../assets/nanaths-day-4.mp4';
+import midiaNanaths5 from '../assets/nanaths-day-5.mp4';
+import midiaNanaths6 from '../assets/nanaths-day-6.jpg';
+import midiaNanaths7 from '../assets/nanaths-day-7.mp4';
+import midiaNanaths8 from '../assets/nanaths-day-8.jpg';
+
+
 export const projects = [
   {
     id: 'emive-expansao',
@@ -29,74 +40,39 @@ export const projects = [
     id: 'nanaths-day',
     title: "Nanath's Day",
     category: 'Marca Pessoal & Content Creation',
-    cover: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2000&auto=format&fit=crop', // Aesthetic de lifestyle/trabalho
+    cover: midiaNanathsCover,
     description: 'Estratégia de influência, curadoria visual e storytelling pessoal. Onde transformo minha rotina em conexão real com a comunidade.',
     year: '2022 - Presente',
     gallery: [
       { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths1, 
+        link: 'https://www.instagram.com/p/DZugwaSRP75/' 
       },
       { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths2,
+        link: 'https://www.instagram.com/p/DZSmlEZxHZ6/' 
       },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths3, 
+        link: 'https://www.instagram.com/p/DW4ESD0Fb1y/' 
       },
       { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths4,
+        link: 'https://www.instagram.com/p/DZQB_KXx9EL/' 
       },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths5, 
+        link: 'https://www.instagram.com/p/DZNhpzaRbBb/' 
       },
       { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths6, 
+        link: 'https://www.instagram.com/p/DZBa4ayjXe7/?img_index=1' 
       },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
+        media: midiaNanaths7, 
+        link: 'https://www.instagram.com/p/DY7Xrb4RYXu/' 
       },
       { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
-      { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
-      { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
-      { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
-      { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },      { 
-        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
-      { 
-        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
-        link: 'https://www.instagram.com/nanathsday/' 
-      },
+        media: midiaNanaths8,
+        link: 'https://www.instagram.com/p/DZAXLi2lr3H/?img_index=1' 
+      }
     ],
     content: `
       O Nanath's Day nasceu como um laboratório criativo e se tornou minha vitrine de marca pessoal. É o espaço onde aplico na prática tudo o que acredito sobre criação de comunidade, autenticidade e tendências digitais.

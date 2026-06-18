@@ -56,8 +56,7 @@ const ProjectDetails = () => {
     );
   }
 
-  const isVideo = (url: string) =>
-    url.includes('.mp4') || url.includes('video-files');
+  const isVideo = (url) => typeof url === 'string' && (url.includes('.mp4') || url.includes('video-files'));
 
   const assignedPositions = useMemo(() => {
     const N = project.gallery.length;
@@ -90,27 +89,60 @@ const ProjectDetails = () => {
         className="project-canvas absolute" 
         style={{ width: '1700px', height: canvasHeight + 'px', transform: 'scale(' + scale + ')', transformOrigin: 'top center', left: '50%', marginLeft: '-850px' }}
       >
-        {/* SIDEBAR MODERNA COM EFEITO GLASSMORPHISM */}
+        {/* SIDEBAR NO JEITO ANTIGO (ABSOLUTE E ROLANDO JUNTO) COM OS NOVOS CAMPOS */}
         <aside className="absolute top-[80px] left-[70px] w-[350px] z-50 bg-[#f8f6f2]/85 backdrop-blur-xl p-10 rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
           <button 
             onClick={() => navigate('/')} 
-            className="mb-8 inline-flex items-center gap-2 px-4 py-2 bg-white/50 hover:bg-white rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-900 transition-all border border-zinc-200/50 shadow-sm"
+            className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-white/50 hover:bg-white rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-900 transition-all border border-zinc-200/50 shadow-sm"
             style={{ fontFamily: 'var(--font-inter)' }}
           >
             <span>←</span> Voltar
           </button>
 
+          {/* NOVO CAMPO: COVER */}
+          {project.cover && (
+            <div className="mb-6 rounded-2xl overflow-hidden h-40 border border-zinc-200/50 shadow-sm">
+              <img 
+                src={project.cover} 
+                alt={`Capa do projeto ${project.title}`} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
           <h1 className="text-4xl lg:text-[46px] leading-[1.1] tracking-tight text-zinc-900 mb-6 break-words hyphens-auto" style={{ fontFamily: 'var(--font-playfair)' }}>
             {project.title}
           </h1>
 
-          <div 
-            className="inline-block px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-500 mb-8"
-            style={{ fontFamily: 'var(--font-inter)' }}
-          >
-            {project.category}
+          {/* NOVOS CAMPOS: YEAR E CATEGORY LADO A LADO */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.year && (
+              <span 
+                className="inline-flex px-3 py-1.5 bg-zinc-900 border border-zinc-900 rounded-full text-[10px] font-bold uppercase tracking-[0.1em] text-white"
+                style={{ fontFamily: 'var(--font-inter)' }}
+              >
+                {project.year}
+              </span>
+            )}
+            <span 
+              className="inline-flex px-3 py-1.5 bg-white border border-zinc-200 rounded-full text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-500"
+              style={{ fontFamily: 'var(--font-inter)' }}
+            >
+              {project.category}
+            </span>
           </div>
 
+          {/* NOVO CAMPO: DESCRIPTION (Como um resumo/intro mais em destaque) */}
+          {project.description && (
+            <p 
+              className="text-[15px] font-medium text-zinc-800 leading-[1.6] mb-4"
+              style={{ fontFamily: 'var(--font-inter)' }}
+            >
+              {project.description}
+            </p>
+          )}
+
+          {/* CONTENT NORMAL */}
           <p 
             className="text-[14px] text-zinc-600 leading-[1.8] whitespace-pre-line mb-10"
             style={{ fontFamily: 'var(--font-inter)' }}
