@@ -56,7 +56,7 @@ const ProjectDetails = () => {
     );
   }
 
-  const isVideo = (url) => typeof url === 'string' && (url.includes('.mp4') || url.includes('video-files'));
+  const isVideo = (url: string) => typeof url === 'string' && (url.includes('.mp4') || url.includes('video-files'));
 
   const assignedPositions = useMemo(() => {
     const N = project.gallery.length;
