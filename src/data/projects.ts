@@ -8,7 +8,7 @@ export const projects = [
     year: '2024',
     gallery: [
       { media: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4', link: '' },
+      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop', link: '' }
     ],
@@ -38,7 +38,7 @@ export const projects = [
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
-        media: 'https://videos.pexels.com/video-files/6981410/6981410-uhd_2160_3840_25fps.mp4', // Vídeo vertical estilo Reels/Vlog
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
@@ -57,7 +57,7 @@ export const projects = [
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
-        media: 'https://videos.pexels.com/video-files/6981410/6981410-uhd_2160_3840_25fps.mp4', // Vídeo vertical estilo Reels/Vlog
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
@@ -73,7 +73,7 @@ export const projects = [
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
-        media: 'https://videos.pexels.com/video-files/6981410/6981410-uhd_2160_3840_25fps.mp4', // Vídeo vertical estilo Reels/Vlog
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
         link: 'https://www.instagram.com/nanathsday/' 
       },
       { 
@@ -109,7 +109,7 @@ export const projects = [
     description: 'Cobertura, roteirização e estratégia de engajamento para a convenção anual de líderes e treinamento de equipes.',
     year: '2023',
     gallery: [
-      { media: 'https://videos.pexels.com/video-files/7578552/7578552-uhd_2160_3840_30fps.mp4', link: '' },
+      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=1000&auto=format&fit=crop', link: '' },
@@ -136,7 +136,7 @@ export const projects = [
     year: '2023',
     gallery: [
       { media: 'https://images.unsplash.com/photo-1596462502278-27bf85033e5a?q=80&w=1000&auto=format&fit=crop', link: '' }, // Skincare
-      { media: 'https://videos.pexels.com/video-files/5006695/5006695-uhd_2160_3840_25fps.mp4', link: '' }, // Textura de produto
+      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' }, // Textura de produto
       { media: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop', link: '' },
       { media: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop', link: '' }
     ],
