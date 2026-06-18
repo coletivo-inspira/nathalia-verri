@@ -40,6 +40,62 @@ export const projects = [
       { 
         media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
         link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
+      },      { 
+        media: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', 
+        link: 'https://www.instagram.com/nanathsday/' 
+      },
+      { 
+        media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', // Vídeo vertical estilo Reels/Vlog
+        link: 'https://www.instagram.com/nanathsday/' 
       },
     ],
     content: `
