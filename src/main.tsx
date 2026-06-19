@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
 
         {/* A rota "/parcerias" agora vai responder em /parcerias */}
-        <Route path="/parcerias" element={<BioLink />} />
+        <Route path="/nanathsday" element={<BioLink />} />
         
         {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
         <Route
