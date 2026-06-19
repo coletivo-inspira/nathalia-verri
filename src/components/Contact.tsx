@@ -1,6 +1,7 @@
 ﻿import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import { Mail, Download } from 'lucide-react';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import curriculoPdf from '../assets/Currículo Nathália Verri.pdf';
 
 const Contact = () => {
   return (
@@ -8,7 +9,6 @@ const Contact = () => {
       id="contact"
       className="relative py-32 px-6 md:px-12 bg-zinc-900 text-white overflow-hidden"
     >
-      {/* Linha decorativa no topo e brilho sutil de fundo para dar profundidade */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
 
@@ -33,31 +33,56 @@ const Contact = () => {
             Sinta-se à vontade para me mandar uma mensagem.
           </p>
 
-          {/* Botão de E-mail (Ação Principal) */}
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="mailto:nathverri2016@gmail.com"
-            className="
-              group flex items-center justify-center gap-3 
-              px-10 py-5 rounded-full bg-white text-zinc-900 font-medium 
-              hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] 
-              transition-all duration-300
-            "
-          >
-            <Mail size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-            nathverri2016@gmail.com
-          </motion.a>
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="mailto:contatonanathsday@gmail.com"
+              className="
+                group flex items-center justify-center gap-3
+                px-10 py-5 rounded-full bg-white text-zinc-900 font-medium
+                hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+                transition-all duration-300
+              "
+            >
+              <Mail
+                size={20}
+                className="group-hover:rotate-12 transition-transform duration-300"
+              />
+              contatonanathsday@gmail.com
+            </motion.a>
 
-          {/* Redes Sociais */}
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={curriculoPdf}
+              download
+              className="
+                group flex items-center justify-center gap-3
+                px-10 py-5 rounded-full
+                border border-white/15
+                text-white
+                hover:bg-white/10
+                hover:border-white/30
+                transition-all duration-300
+              "
+            >
+              <Download
+                size={20}
+                className="group-hover:translate-y-0.5 transition-transform duration-300"
+              />
+              Download CV
+            </motion.a>
+          </div>
+
           <div className="flex justify-center gap-6 mt-16">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nathaliaverri/"
               target="_blank"
               rel="noopener noreferrer"
               className="
-                w-14 h-14 rounded-full border border-white/10 
-                flex items-center justify-center text-zinc-400 
+                w-14 h-14 rounded-full border border-white/10
+                flex items-center justify-center text-zinc-400
                 hover:bg-white/10 hover:text-white hover:border-white/30
                 transition-all duration-300
               "
@@ -66,12 +91,12 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/verrimuch/"
               target="_blank"
               rel="noopener noreferrer"
               className="
-                w-14 h-14 rounded-full border border-white/10 
-                flex items-center justify-center text-zinc-400 
+                w-14 h-14 rounded-full border border-white/10
+                flex items-center justify-center text-zinc-400
                 hover:bg-white/10 hover:text-white hover:border-white/30
                 transition-all duration-300
               "

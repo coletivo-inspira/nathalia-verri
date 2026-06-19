@@ -9,32 +9,21 @@ import midiaNanaths7 from '../assets/nanaths-day-7.mp4';
 import midiaNanaths8 from '../assets/nanaths-day-8.jpg';
 
 
+import midiaTransfacilCover from '../assets/transfacil-social-media-cover.png';
+import midiaTransfacil1 from '../assets/transfacil-social-media-1.webp';
+import midiaTransfacil2 from '../assets/transfacil-social-media-2.mp4';
+import midiaTransfacil3 from '../assets/transfacil-social-media-3.webp';
+import midiaTransfacil4 from '../assets/transfacil-social-media-4.mp4';
+import midiaTransfacil5 from '../assets/transfacil-social-media-5.mp4';
+import midiaTransfacil6 from '../assets/transfacil-social-media-6.webp';
+import midiaTransfacil7 from '../assets/transfacil-social-media-7.webp';
+import midiaTransfacil8 from '../assets/transfacil-social-media-8.mp4';
+import midiaTransfacil9 from '../assets/transfacil-social-media-9.mp4';
+import midiaTransfacil10 from '../assets/transfacil-social-media-10.webp';
+import midiaTransfacil11 from '../assets/transfacil-social-media-11.mp4';
+
+
 export const projects = [
-  {
-    id: 'emive-expansao',
-    title: 'Emive&Co: Expansão B2B',
-    category: 'Comercial & Marketing Estratégico',
-    cover: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000&auto=format&fit=crop',
-    description: 'Atuação direta como SDR na reestruturação do funil de vendas corporativo, aliando comunicação estratégica à prospecção de alto impacto.',
-    year: '2024',
-    gallery: [
-      { media: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop', link: '' }
-    ],
-    content: `
-      Durante minha atuação na Emive&Co, fui responsável pela prospecção ativa de leads corporativos, qualificação comercial inteligente e gestão de relacionamento.
-      
-      O foco principal não era apenas vender, mas criar uma narrativa de valor que conectasse a dor do cliente à solução oferecida, fortalecendo as taxas de conversão.
-    `,
-    results: [
-      { valor: '+150%', texto: 'Crescimento em conversões B2B.' },
-      { valor: '45%', texto: 'Redução no ciclo de vendas.' },
-      { valor: 'Top 1', texto: 'Performance trimestral.' },
-    ],
-  },
-  
   // --- SEU PROJETO PESSOAL ---
   {
     id: 'nanaths-day',
@@ -42,36 +31,36 @@ export const projects = [
     category: 'Marca Pessoal & Content Creation',
     cover: midiaNanathsCover,
     description: 'Estratégia de influência, curadoria visual e storytelling pessoal. Onde transformo minha rotina em conexão real com a comunidade.',
-    year: '2022 - Presente',
+    year: '2024 - Presente',
     gallery: [
-      { 
-        media: midiaNanaths1, 
-        link: 'https://www.instagram.com/p/DZugwaSRP75/' 
+      {
+        media: midiaNanaths1,
+        link: 'https://www.instagram.com/p/DZugwaSRP75/'
       },
-      { 
+      {
         media: midiaNanaths2,
-        link: 'https://www.instagram.com/p/DZSmlEZxHZ6/' 
-      },      { 
-        media: midiaNanaths3, 
-        link: 'https://www.instagram.com/p/DW4ESD0Fb1y/' 
+        link: 'https://www.instagram.com/p/DZSmlEZxHZ6/'
+      }, {
+        media: midiaNanaths3,
+        link: 'https://www.instagram.com/p/DW4ESD0Fb1y/'
       },
-      { 
+      {
         media: midiaNanaths4,
-        link: 'https://www.instagram.com/p/DZQB_KXx9EL/' 
-      },      { 
-        media: midiaNanaths5, 
-        link: 'https://www.instagram.com/p/DZNhpzaRbBb/' 
+        link: 'https://www.instagram.com/p/DZQB_KXx9EL/'
+      }, {
+        media: midiaNanaths5,
+        link: 'https://www.instagram.com/p/DZNhpzaRbBb/'
       },
-      { 
-        media: midiaNanaths6, 
-        link: 'https://www.instagram.com/p/DZBa4ayjXe7/?img_index=1' 
-      },      { 
-        media: midiaNanaths7, 
-        link: 'https://www.instagram.com/p/DY7Xrb4RYXu/' 
+      {
+        media: midiaNanaths6,
+        link: 'https://www.instagram.com/p/DZBa4ayjXe7/?img_index=1'
+      }, {
+        media: midiaNanaths7,
+        link: 'https://www.instagram.com/p/DY7Xrb4RYXu/'
       },
-      { 
+      {
         media: midiaNanaths8,
-        link: 'https://www.instagram.com/p/DZAXLi2lr3H/?img_index=1' 
+        link: 'https://www.instagram.com/p/DZAXLi2lr3H/?img_index=1'
       }
     ],
     content: `
@@ -85,55 +74,65 @@ export const projects = [
       { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
     ],
   },
-
   {
-    id: 'hp-solucoes',
-    title: 'H&P: Cultura em Foco',
-    category: 'Comunicação Interna & Eventos',
-    cover: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2000&auto=format&fit=crop', 
-    description: 'Cobertura, roteirização e estratégia de engajamento para a convenção anual de líderes e treinamento de equipes.',
-    year: '2023',
+    id: 'transfacil-social-media',
+    title: 'Transfacil: Gestão Estratégica de Redes Sociais',
+    category: 'Marketing Digital & Social Media',
+    cover: midiaTransfacilCover,
+    description: 'Responsável pela gestão completa das redes sociais da Transfacil, desenvolvendo estratégias de comunicação digital, planejamento editorial e fortalecimento da presença da marca no ambiente online.',
+    year: '2025 - Presente',
     gallery: [
-      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=1000&auto=format&fit=crop', link: '' },
+      {
+        media: midiaTransfacil1,
+        link: 'https://www.instagram.com/p/DZvIo5mGljY/?img_index=1'
+      },
+      {
+        media: midiaTransfacil2,
+        link: 'https://www.instagram.com/p/DZDG5xSAou5/'
+      },
+      {
+        media: midiaTransfacil3,
+        link: 'https://www.instagram.com/p/DXwh6AagMID/?img_index=4'
+      },
+      {
+        media: midiaTransfacil4,
+        link: 'https://www.instagram.com/p/DXhreTxD_go/'
+      },
+      {
+        media: midiaTransfacil5,
+        link: 'https://www.instagram.com/p/DXWvkUCgIRh/'
+      },
+      {
+        media: midiaTransfacil6,
+        link: 'https://www.instagram.com/p/DW7NwhZj2dj/'
+      },
+      {
+        media: midiaTransfacil7,
+        link: 'https://www.instagram.com/p/DWzVNPAj7nW/?img_index=1'
+      },
+      {
+        media: midiaTransfacil8,
+        link: 'https://www.instagram.com/p/DWmayf_j_pR/'
+      },
+      {
+        media: midiaTransfacil9,
+        link: 'https://www.instagram.com/p/DWHO4KJgPKa/'
+      },
+      {
+        media: midiaTransfacil10,
+        link: 'https://www.instagram.com/p/DV8vD5mgLRP/'
+      },
+      {
+        media: midiaTransfacil11,
+        link: 'https://www.instagram.com/p/DTu-nPgkaxa/'
+      }
     ],
-    content: `
-      O desafio deste projeto foi transformar uma convenção corporativa tradicional em um marco de cultura organizacional. Atuei na estratégia de comunicação antes, durante e após o evento.
-      
-      Através de dinâmicas alinhadas com a equipe e registros autênticos, conseguimos traduzir os desejos dos colaboradores em ações práticas para a empresa.
-    `,
+    content: 'Como Social Media Marketing Intern na Transfacil, atuo na gestão estratégica dos canais digitais da empresa, sendo responsável pelo planejamento, produção e acompanhamento de conteúdos para diferentes plataformas.\nMeu trabalho envolve a construção do calendário editorial, definição de pautas alinhadas aos objetivos da marca, análise de tendências, monitoramento de métricas e otimização contínua da comunicação digital.\nAlém da criação de conteúdo, participo do desenvolvimento de campanhas institucionais e promocionais, buscando ampliar o alcance da marca, fortalecer o relacionamento com o público e gerar maior engajamento nas redes sociais.\nA atuação também inclui análise de desempenho, identificação de oportunidades de crescimento e implementação de estratégias voltadas para posicionamento de marca e experiência do usuário nos canais digitais.'
+    ,
     results: [
-      { valor: '+200', texto: 'Colaboradores engajados.' },
-      { valor: '100%', texto: 'Adesão às novas diretrizes.' },
-      { valor: '98%', texto: 'Satisfação pós-evento.' },
-    ],
-  },
-
-  // --- PROJETO NOVO FICTÍCIO (Para adicionar peso de Social Media/E-commerce) ---
-  {
-    id: 'luna-cosmeticos',
-    title: 'Luna: Lançamento Digital',
-    category: 'Estratégia Digital & Social Media',
-    cover: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2000&auto=format&fit=crop', // Cosméticos/Skincare aesthetic
-    description: 'Desenvolvimento do calendário editorial e campanhas de conversão para o lançamento de uma nova linha de produtos de beleza.',
-    year: '2023',
-    gallery: [
-      { media: 'https://images.unsplash.com/photo-1596462502278-27bf85033e5a?q=80&w=1000&auto=format&fit=crop', link: '' }, // Skincare
-      { media: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop', link: '' }, // Textura de produto
-      { media: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop', link: '' },
-      { media: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop', link: '' }
-    ],
-    content: `
-      Assumi a linha de frente do lançamento digital, estruturando pilares de conteúdo que gerassem desejo, autoridade e, consequentemente, vendas diretas.
-      
-      Desde a pesquisa de tendências para os vídeos curtos até a redação (copywriting) de peças para anúncios, o objetivo foi construir uma jornada de compra sem atritos nas redes sociais.
-    `,
-    results: [
-      { valor: 'Sold Out', texto: 'Lote esgotado em 48h.' },
-      { valor: '+2M', texto: 'Impressões orgânicas em Reels.' },
-      { valor: '5x', texto: 'Retorno sobre investimento (ROAS).' },
+      { valor: '100%', texto: 'Gestão das redes sociais da empresa.' },
+      { valor: '360°', texto: 'Planejamento, criação e monitoramento de conteúdo.' },
+      { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
     ],
   }
 ];

@@ -65,6 +65,15 @@ const About = () => {
                     UNA • 2025 — 2028
                   </p>
                 </div>
+                <div>
+                  <h4 className="font-semibold text-zinc-900">
+                    Embaixadora do Creators Club | Synergy.co
+                  </h4>
+
+                  <p className="text-zinc-500">
+                    Representação e engajamento da comunidade criativa.
+                  </p>
+                </div>
 
                 <div>
                   <h4 className="font-semibold text-zinc-900">

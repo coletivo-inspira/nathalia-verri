@@ -12,13 +12,13 @@ createRoot(document.getElementById('root')!).render(
     {/* Adicione o basename aqui 👇 */}
 <BrowserRouter basename="/">
       <Routes>
-        {/* A rota "/" agora vai responder em /nathalia-verri/ */}
+        {/* A rota "/" agora vai responder em / */}
         <Route path="/" element={<App />} />
 
-        {/* A rota "/links" agora vai responder em /nathalia-verri/links */}
-        <Route path="/links" element={<BioLink />} />
+        {/* A rota "/parcerias" agora vai responder em /parcerias */}
+        <Route path="/parcerias" element={<BioLink />} />
         
-        {/* A rota "/projeto/:id" agora vai responder em /nathalia-verri/projeto/:id */}
+        {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
         <Route
           path="/projeto/:id"
           element={<ProjectDetails />}
