@@ -10,7 +10,7 @@ import ProjectDetails from './pages/ProjectDetails.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* Adicione o basename aqui 👇 */}
-    <BrowserRouter basename="/nathalia-verri">
+<BrowserRouter basename="/">
       <Routes>
         {/* A rota "/" agora vai responder em /nathalia-verri/ */}
         <Route path="/" element={<App />} />
