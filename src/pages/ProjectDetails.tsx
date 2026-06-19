@@ -49,7 +49,7 @@ const PATTERN_MOBILE = [
   { top: 4080, left: 870, width: 370, rotate: 2 },
   { top: 4180, left: 1270, width: 390, rotate: -1 },
 ].sort((a, b) => a.top - b.top);
-
+//teste
 
 const ProjectDetails = () => {
   const { id } = useParams();
