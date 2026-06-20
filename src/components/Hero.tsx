@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Background blur */}
       <div className="absolute top-[-120px] left-[-120px] w-[400px] h-[400px] bg-[#eaded2] rounded-full blur-3xl opacity-40 pointer-events-none" />
 
-      {/* --- IMAGEM DESKTOP (Inalterada, oculta no mobile) --- */}
+      {/* --- IMAGEM DESKTOP (Oculta no mobile) --- */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 0.8, x: 0 }}
@@ -49,50 +49,51 @@ const Hero = () => {
       </motion.div>
 
       {/* --- CONTEÚDO PRINCIPAL --- */}
-      <div className="relative z-20 max-w-6xl mx-auto px-6 md:px-12 w-full pt-20 lg:pt-0">
+      {/* CORREÇÃO AQUI: Mudei pt-20 para pt-8 para ajustar o respiro no topo de telas grandes */}
+      <div className="relative z-20 max-w-6xl mx-auto px-6 md:px-12 w-full pt-8 lg:pt-0">
         
-        {/* NOVO: IMAGEM MOBILE (Oculta no desktop, visível no mobile) */}
+        {/* --- IMAGEM MOBILE (Oculta no desktop, visível no mobile) --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          // Ajustei a altura para celular para ficar bem harmônico
           className="block lg:hidden w-full h-[200px] sm:h-[480px] mb-8 relative rounded-[2rem] overflow-hidden shadow-2xl shadow-[#d8c7b8]/40"
         >
           <img
             src={imageMobile}
             alt="Nathália Verri (Mobile)"
-            className="w-full h-full object-cover object-center" // Ajuste 'object-center' se necessário
+            className="w-full h-full object-cover object-center"
           />
           {/* Degradê na base da imagem mobile */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#f8f5f2] via-transparent to-transparent opacity-90" />
         </motion.div>
 
-        {/* --- TEXTOS (Ajustados para Mobile e Web) --- */}
+        {/* --- TEXTOS --- */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-3xl"
         >
-          {/* Ajuste do tracking e quebra de texto para mobile */}
+          {/* Tracking e quebra de texto */}
           <span className="block uppercase tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm text-zinc-500 font-medium leading-relaxed">
             Marketing & Comunicação • Social Media • Estratégia de Conteúdo
           </span>
 
-          {/* Ajuste do tamanho do título para mobile */}
+          {/* Título */}
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-playfair text-zinc-900 mt-6 leading-[1.1] md:leading-[0.95]">
             Nathália
             <br />
             Verri
           </h1>
 
-          {/* Ajuste do espaçamento e texto para mobile */}
+          {/* Descrição */}
           <p className="max-w-2xl text-base sm:text-lg md:text-xl text-zinc-600 mt-6 md:mt-8 leading-relaxed font-light">
             Transformando comunicação, estratégia e presença digital
             em experiências que geram conexão e resultados.
           </p>
 
+          {/* Botão */}
           <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12">
             <a
               href="#about"
