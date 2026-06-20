@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { creatorLinks, socialLinks } from '../data/links';
 import image from '../assets/partnership_image.jpg';
 
+
 const profile = {
   name: 'Nathália Verri',
   handle: '@nanathsday',

@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 
@@ -55,7 +55,6 @@ const ProjectDetails = () => {
   const navigate = useNavigate();
 
   const project = projects.find((item) => item.id === id);
-
   const currentIndex = projects.findIndex((p) => p.id === id);
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
@@ -67,11 +66,14 @@ const ProjectDetails = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [scale, setScale] = useState(1);
 
+  // NOVO: Referência e Estado para medir a altura da barra lateral dinamicamente
+  const sidebarRef = useRef<HTMLElement>(null);
+  const [sidebarHeight, setSidebarHeight] = useState(0);
+
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width <= 768);
-      // Sempre aplica o scale para manter a proporção do canvas (Web e Mobile usam a mesma lógica!)
       setScale(Math.min(1, width / 1700));
     };
 
@@ -79,6 +81,21 @@ const ProjectDetails = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // NOVO: Effect para observar as mudanças de tamanho da barra lateral em tempo real
+  useEffect(() => {
+    if (!sidebarRef.current) return;
+    
+    // O ResizeObserver atualiza a altura mesmo quando a foto carrega ou o texto quebra de linha
+    const resizeObserver = new ResizeObserver((entries) => {
+      if (entries[0]) {
+        setSidebarHeight(entries[0].contentRect.height);
+      }
+    });
+
+    resizeObserver.observe(sidebarRef.current);
+    return () => resizeObserver.disconnect();
+  }, [project?.id]);
 
   // Loop de 5 segundos
   useEffect(() => {
@@ -91,16 +108,13 @@ const ProjectDetails = () => {
 
   const isVideo = (url: string) => typeof url === 'string' && (url.includes('.mp4') || url.includes('video-files'));
 
-  // Define as coordenadas baseadas no tamanho da tela
   const assignedPositions = useMemo(() => {
     if (!project) return [];
     const N = project.gallery.length;
-    // Puxa o padrão espalhado para PC, ou o de 2 colunas para celular
     const basePattern = isMobile ? PATTERN_MOBILE : PATTERN_WEB;
     const slotsToUse = basePattern.slice(0, N);
-    
     return [...slotsToUse].sort(() => Math.random() - 0.5);
-  }, [project?.id, project?.gallery?.length, isMobile]); // isMobile adicionado como dependência para recarregar se virar a tela
+  }, [project?.id, project?.gallery?.length, isMobile]);
 
   if (!project) {
     return (
@@ -115,24 +129,36 @@ const ProjectDetails = () => {
     );
   }
 
+  // --- CÁLCULO DE ALTURA INTELIGENTE ---
   const maxTop = assignedPositions.length > 0
-    ? Math.max(...assignedPositions.map(pos => pos.top)) 
+    ? Math.max(...assignedPositions.map(pos => pos.top))
     : 0;
-  const canvasHeight = Math.max(1000, maxTop + 800);
+
+  const baseMinHeight = isMobile ? 2000 : 1000;
+  const paddingBottom = isMobile ? 1200 : 800;
+  
+  // Calcula o espaço necessário pelas imagens
+  const heightFromImages = maxTop + paddingBottom;
+  
+  // Calcula o espaço necessário pela barra lateral (posição top de 80px + altura do conteúdo + um respiro embaixo)
+  const heightFromSidebar = 80 + sidebarHeight + (isMobile ? 200 : 100);
+
+  // O canvasHeight final será o MAIOR valor entre as imagens, a barra lateral ou a altura mínima base.
+  const canvasHeight = Math.max(baseMinHeight, heightFromImages, heightFromSidebar);
 
   return (
-    <div className="min-h-screen bg-[#f8f6f2] text-zinc-900 selection:bg-rose-200 overflow-x-hidden relative" style={{ height: (canvasHeight * scale) + 'px' }}>
-      
-      {/* CANVAS MANTÉM A MECÂNICA ABSOLUTA EM AMBOS */}
-      <div 
-        className="project-canvas absolute" 
+    <div className="min-h-screen bg-[#f8f6f2] text-zinc-900 selection:bg-rose-200 overflow-hidden relative" style={{ height: (canvasHeight * scale) + 'px' }}>
+      <div
+        className="project-canvas absolute"
         style={{ width: '1700px', height: canvasHeight + 'px', transform: 'scale(' + scale + ')', transformOrigin: 'top center', left: '50%', marginLeft: '-850px' }}
       >
-        
-        {/* SIDEBAR: Largura e fontes mudam dinamicamente se isMobile for true */}
-        <aside className={`absolute top-[80px] left-[70px] z-50 bg-[#f8f6f2]/85 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${isMobile ? 'w-[750px] p-14' : 'w-[350px] p-10'}`}>
-          <button 
-            onClick={() => navigate('/')} 
+        {/* NOVO: Adicionei o ref={sidebarRef} na tag aside abaixo */}
+        <aside 
+          ref={sidebarRef}
+          className={`absolute top-[80px] left-[70px] z-50 bg-[#f8f6f2]/85 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${isMobile ? 'w-[750px] p-14' : 'w-[350px] p-10'}`}
+        >
+          <button
+            onClick={() => navigate('/')}
             className={`inline-flex items-center gap-2 bg-white/50 hover:bg-white rounded-full font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-900 transition-all border border-zinc-200/50 shadow-sm ${isMobile ? 'text-[24px] px-8 py-4 mb-10' : 'text-[10px] px-4 py-2 mb-6'}`}
             style={{ fontFamily: 'var(--font-inter)' }}
           >
@@ -162,6 +188,33 @@ const ProjectDetails = () => {
 
           <p className={`text-zinc-600 leading-[1.8] whitespace-pre-line ${isMobile ? 'text-[28px] mb-16' : 'text-[14px] mb-10'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.content}</p>
 
+          {project.links && project.links.length > 0 && (
+            <div className={`pt-8 border-t border-zinc-200/80 ${isMobile ? 'mb-16' : 'mb-10'}`}>
+              <h3 className={`font-bold uppercase tracking-[0.2em] text-zinc-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Acessar</h3>
+              <div className={`flex flex-col ${isMobile ? 'gap-6' : 'gap-4'}`}>
+                {project.links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center w-fit transition-all duration-300"
+                  >
+                    <span
+                      className={`leading-none text-zinc-900 group-hover:text-zinc-500 transition-colors border-b border-transparent group-hover:border-zinc-300 pb-1 ${isMobile ? 'text-[52px]' : 'text-[26px]'}`}
+                      style={{ fontFamily: 'var(--font-playfair)' }}
+                    >
+                      {link.texto}
+                    </span>
+                    <span className={`text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ${isMobile ? 'text-[32px] ml-4' : 'text-[16px] ml-2'}`}>
+                      ↗
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
           {project.results && project.results.length > 0 && (
             <div className={`pt-8 border-t border-zinc-200/80 ${isMobile ? 'mt-10' : 'mt-0'}`}>
               <h3 className={`font-bold uppercase tracking-[0.2em] text-zinc-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Impacto Gerado</h3>
@@ -177,7 +230,7 @@ const ProjectDetails = () => {
           )}
 
           <div className="mt-12 pt-8 border-t border-zinc-200/80">
-            <button 
+            <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 setTimeout(() => navigate(`/projeto/${nextProject.id}`), 300);
@@ -191,7 +244,7 @@ const ProjectDetails = () => {
           </div>
         </aside>
 
-        {/* GALERIA - Mesmo código de sempre, mas usa o grid dinâmico via JS */}
+        {/* GALERIA */}
         {project.gallery.map((item, index) => {
           const pos = assignedPositions[index];
           if (!pos) return null;
@@ -212,19 +265,18 @@ const ProjectDetails = () => {
                 left: pos.left + 'px',
                 width: pos.width + 'px',
                 height: 'auto',
-                // Aumenta a distância de pulo no mobile para ficar visível (32px em vez de 16px)
-                transform: isActive 
-                  ? `translateY(-${isMobile ? 32 : 16}px) scale(1.05) rotate(${pos.rotate}deg)` 
+                transform: isActive
+                  ? `translateY(-${isMobile ? 32 : 16}px) scale(1.05) rotate(${pos.rotate}deg)`
                   : `rotate(${pos.rotate}deg)`,
                 zIndex: isActive ? 9999 : 1,
               }}
             >
-              <div 
+              <div
                 className="relative bg-white rounded-2xl border border-zinc-100 transition-all duration-500"
                 style={{
-                  padding: isMobile ? '24px' : '16px', // Borda branca polaroid maior no mobile
-                  boxShadow: isActive 
-                    ? '0 30px 70px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08)' 
+                  padding: isMobile ? '24px' : '16px',
+                  boxShadow: isActive
+                    ? '0 30px 70px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08)'
                     : '0 10px 40px rgba(0,0,0,0.06)'
                 }}
               >

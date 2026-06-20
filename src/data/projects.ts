@@ -32,6 +32,9 @@ export const projects = [
     cover: midiaNanathsCover,
     description: 'Estratégia de influência, curadoria visual e storytelling pessoal. Onde transformo minha rotina em conexão real com a comunidade.',
     year: '2024 - Presente',
+    links: [
+      { texto: 'Instagram', url: 'https://www.instagram.com/nanathsday/' },
+    ],
     gallery: [
       {
         media: midiaNanaths1,
@@ -74,6 +77,7 @@ export const projects = [
       { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
     ],
   },
+  //Transfacil
   {
     id: 'transfacil-social-media',
     title: 'Transfacil: Gestão Estratégica de Redes Sociais',
@@ -81,6 +85,9 @@ export const projects = [
     cover: midiaTransfacilCover,
     description: 'Responsável pela gestão completa das redes sociais da Transfacil, desenvolvendo estratégias de comunicação digital, planejamento editorial e fortalecimento da presença da marca no ambiente online.',
     year: '2025 - Presente',
+    links: [
+      { texto: 'Instagram', url: 'https://www.instagram.com/oficialtransfacil/' },
+    ],
     gallery: [
       {
         media: midiaTransfacil1,
