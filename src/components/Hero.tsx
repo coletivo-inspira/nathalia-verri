@@ -7,7 +7,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center lg:items-center overflow-hidden bg-gradient-to-br from-[#f8f5f2] via-white via-10% to-[#f1ece7]"
+      // AQUI ESTÁ O SEGREDO DO NOVO LAYOUT:
+      // pt-32 empurra para baixo do menu. pb-12 dá um respiro no final para telas pequenas.
+      // lg:pt-0 lg:pb-0 lg:justify-center garante que o PC continue perfeitamente centralizado.
+      className="relative min-h-screen flex flex-col pt-32 pb-12 lg:pt-0 lg:pb-0 lg:justify-center lg:items-center overflow-hidden bg-gradient-to-br from-[#f8f5f2] via-white via-10% to-[#f1ece7]"
     >
       {/* Background blur */}
       <div className="absolute top-[-120px] left-[-120px] w-[400px] h-[400px] bg-[#eaded2] rounded-full blur-3xl opacity-40 pointer-events-none" />
@@ -49,15 +52,15 @@ const Hero = () => {
       </motion.div>
 
       {/* --- CONTEÚDO PRINCIPAL --- */}
-      {/* CORREÇÃO AQUI: Mudei pt-20 para pt-8 para ajustar o respiro no topo de telas grandes */}
-      <div className="relative z-20 max-w-6xl mx-auto px-6 md:px-12 w-full pt-8 lg:pt-0">
+      {/* Retirei o padding daqui para não somar com o padding da section */}
+      <div className="relative z-20 max-w-6xl mx-auto px-6 md:px-12 w-full">
         
         {/* --- IMAGEM MOBILE (Oculta no desktop, visível no mobile) --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="block lg:hidden w-full h-[200px] sm:h-[480px] mb-8 relative rounded-[2rem] overflow-hidden shadow-2xl shadow-[#d8c7b8]/40"
+          className="block lg:hidden w-full h-[190px] sm:h-[480px] mb-8 relative rounded-[2rem] overflow-hidden shadow-2xl shadow-[#d8c7b8]/40"
         >
           <img
             src={imageMobile}
