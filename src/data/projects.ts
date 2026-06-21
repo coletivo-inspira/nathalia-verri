@@ -34,6 +34,7 @@ export const projects = [
     year: '2024 - Presente',
     links: [
       { texto: 'Instagram', url: 'https://www.instagram.com/nanathsday/' },
+      { texto: 'Parcerias', url: 'https://nathaliaverri.inspira.dev.br/nanathsday' },
     ],
     gallery: [
       {
