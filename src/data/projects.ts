@@ -7,6 +7,12 @@ import midiaNanaths5 from '../assets/nanaths-day-5.mp4';
 import midiaNanaths6 from '../assets/nanaths-day-6.jpg';
 import midiaNanaths7 from '../assets/nanaths-day-7.mp4';
 import midiaNanaths8 from '../assets/nanaths-day-8.jpg';
+import midiaNanaths9 from '../assets/nanaths-day-9.mp4';
+import midiaNanaths10 from '../assets/nanaths-day-10.mp4';
+import midiaNanaths11 from '../assets/nanaths-day-11.mp4';
+import midiaNanaths12 from '../assets/nanaths-day-12.mp4';
+import midiaNanaths13 from '../assets/nanaths-day-13.mp4';
+import midiaNanaths14 from '../assets/nanaths-day-14.jpg';
 
 
 import midiaTransfacilCover from '../assets/transfacil-social-media-cover.png';
@@ -65,6 +71,30 @@ export const projects = [
       {
         media: midiaNanaths8,
         link: 'https://www.instagram.com/p/DZAXLi2lr3H/?img_index=1'
+      },
+      {
+        media: midiaNanaths9,
+        link: 'https://www.instagram.com/nanathsday/reel/DW9ONbSjUon/'
+      },
+      {
+        media: midiaNanaths10,
+        link: 'https://www.instagram.com/nanathsday/reel/DWXVwA5DYWS/'
+      },
+      {
+        media: midiaNanaths11,
+        link: 'https://www.instagram.com/nanathsday/reel/DWMQw_yDXbT/'
+      },
+      {
+        media: midiaNanaths12,
+        link: 'https://www.instagram.com/nanathsday/reel/DRTIPpajV7H/'
+      },
+      {
+        media: midiaNanaths13,
+        link: 'https://www.instagram.com/nanathsday/reel/DPO8IoPjdkp/'
+      },
+      {
+        media: midiaNanaths14,
+        link: 'https://www.instagram.com/nanathsday/p/DZh7fCMEWMF/'
       }
     ],
     content: `
