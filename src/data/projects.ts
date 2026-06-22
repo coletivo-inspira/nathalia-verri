@@ -28,6 +28,22 @@ import midiaTransfacil9 from '../assets/transfacil-social-media-9.mp4';
 import midiaTransfacil10 from '../assets/transfacil-social-media-10.webp';
 import midiaTransfacil11 from '../assets/transfacil-social-media-11.mp4';
 
+import midiaRicardoHamdanCover from '../assets/ricardo-hamdan-cozinha-arabe-cover.png';
+import midiaRicardoHamdan1 from '../assets/ricardo-hamdan-cozinha-arabe-1.jpeg';
+import midiaRicardoHamdan2 from '../assets/ricardo-hamdan-cozinha-arabe-2.jpeg';
+import midiaRicardoHamdan3 from '../assets/ricardo-hamdan-cozinha-arabe-3.mp4';
+import midiaRicardoHamdan4 from '../assets/ricardo-hamdan-cozinha-arabe-4.mp4';
+import midiaRicardoHamdan5 from '../assets/ricardo-hamdan-cozinha-arabe-5.mp4';
+import midiaRicardoHamdan6 from '../assets/ricardo-hamdan-cozinha-arabe-6.mp4';
+import midiaRicardoHamdan7 from '../assets/ricardo-hamdan-cozinha-arabe-7.mp4';
+import midiaRicardoHamdan8 from '../assets/ricardo-hamdan-cozinha-arabe-8.mp4';
+import midiaRicardoHamdan9 from '../assets/ricardo-hamdan-cozinha-arabe-9.mp4';
+import midiaRicardoHamdan10 from '../assets/ricardo-hamdan-cozinha-arabe-10.mp4';
+import midiaRicardoHamdan11 from '../assets/ricardo-hamdan-cozinha-arabe-11.mp4';
+import midiaRicardoHamdan12 from '../assets/ricardo-hamdan-cozinha-arabe-12.mp4';
+import midiaRicardoHamdan13 from '../assets/ricardo-hamdan-cozinha-arabe-13.mp4';
+import midiaRicardoHamdan14 from '../assets/ricardo-hamdan-cozinha-arabe-14.mp4';
+
 
 export const projects = [
   // --- SEU PROJETO PESSOAL ---
@@ -171,6 +187,68 @@ export const projects = [
       { valor: '100%', texto: 'Gestão das redes sociais da empresa.' },
       { valor: '360°', texto: 'Planejamento, criação e monitoramento de conteúdo.' },
       { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
+    ],
+  },
+  //Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe
+  {
+    id: 'ricardo-hamdan-cozinha-arabe',
+    title: 'Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe',
+    category: 'Marketing Digital & Social Media',
+    cover: midiaRicardoHamdanCover,
+    description: 'Desenvolvimento de um projeto de rebranding e posicionamento digital para a marca Ricardo Hamdan Cozinha Árabe, com foco no fortalecimento da identidade da marca, ampliação do alcance digital e atração de novos públicos.',
+    year: '2025',
+    links: [
+      { texto: 'Instagram', url: 'https://www.instagram.com/ricardo_hamdan/' },
+    ],
+    gallery: [
+      {
+        media: midiaRicardoHamdan1,
+      }, 
+      {
+        media: midiaRicardoHamdan2,
+      }, 
+      {
+        media: midiaRicardoHamdan3,
+      }, 
+      {
+        media: midiaRicardoHamdan4,
+      }, 
+      {
+        media: midiaRicardoHamdan5,
+      }, 
+      {
+        media: midiaRicardoHamdan6,
+      }, 
+      {
+        media: midiaRicardoHamdan7,
+      }, 
+      {
+        media: midiaRicardoHamdan8,
+      }, 
+      {
+        media: midiaRicardoHamdan9,
+      }, 
+      {
+        media: midiaRicardoHamdan10,
+      }, 
+      {
+        media: midiaRicardoHamdan11,
+      }, 
+      {
+        media: midiaRicardoHamdan12,
+      }, 
+      {
+        media: midiaRicardoHamdan13,
+      }, 
+      {
+        media: midiaRicardoHamdan14,
+      }
+    ],
+    content: 'Projeto desenvolvido como estudo aplicado na graduação em Publicidade e Propaganda, com o objetivo de analisar a presença digital da marca Ricardo Hamdan Cozinha Árabe e propor estratégias para fortalecer seu posicionamento no mercado.\n\nO trabalho envolveu pesquisas de mercado, análise de concorrência, definição de personas e elaboração de ações voltadas para redes sociais e marketing digital.\n\nAlém do planejamento estratégico, participei da captação de conteúdos para o Instagram da marca, buscando destacar a experiência gastronômica, a autenticidade da culinária árabe e os diferenciais do restaurante.\n\nO projeto teve como foco tornar a comunicação mais atrativa, fortalecer o relacionamento com os clientes e aumentar o reconhecimento da marca no ambiente digital por meio de estratégias de branding, produção de conteúdo e posicionamento online.',
+    results: [
+      { valor: 'Branding', texto: 'Desenvolvimento de estratégias de posicionamento e identidade de marca.' },
+      { valor: 'Social', texto: 'Planejamento e criação de conteúdo para redes sociais.' },
+      { valor: 'Digital', texto: 'Pesquisa de mercado, definição de personas e estratégias de marketing digital.' },
     ],
   }
 ];
