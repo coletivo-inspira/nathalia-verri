@@ -203,45 +203,59 @@ export const projects = [
     gallery: [
       {
         media: midiaRicardoHamdan1,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan2,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan3,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan4,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan5,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan6,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan7,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan8,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan9,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan10,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan11,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan12,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan13,
-      }, 
+        link: ''
+      },
       {
         media: midiaRicardoHamdan14,
+        link: ''
       }
     ],
     content: 'Projeto desenvolvido como estudo aplicado na graduação em Publicidade e Propaganda, com o objetivo de analisar a presença digital da marca Ricardo Hamdan Cozinha Árabe e propor estratégias para fortalecer seu posicionamento no mercado.\n\nO trabalho envolveu pesquisas de mercado, análise de concorrência, definição de personas e elaboração de ações voltadas para redes sociais e marketing digital.\n\nAlém do planejamento estratégico, participei da captação de conteúdos para o Instagram da marca, buscando destacar a experiência gastronômica, a autenticidade da culinária árabe e os diferenciais do restaurante.\n\nO projeto teve como foco tornar a comunicação mais atrativa, fortalecer o relacionamento com os clientes e aumentar o reconhecimento da marca no ambiente digital por meio de estratégias de branding, produção de conteúdo e posicionamento online.',
