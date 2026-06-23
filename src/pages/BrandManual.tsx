@@ -108,7 +108,7 @@ const BrandManual = () => {
   const navigate = useNavigate();
 
   const handleNavigateToContact = () => {
-    navigate('/');
+    navigate('/#home');
   };
 
   const pillarIconProps = {
