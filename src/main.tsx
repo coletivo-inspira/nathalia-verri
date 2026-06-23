@@ -2,12 +2,18 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
+import ReactGA from 'react-ga4';
 
 import App from './App.tsx'
 import BioLink from './pages/BioLink.tsx'
 import ProjectDetails from './pages/ProjectDetails.tsx'
 import BrandManual from './pages/BrandManual.tsx'
 import ScrollRestoration from './components/ScrollRestoration.tsx';
+
+// INICIALIZA O GOOGLE ANALYTICS
+// IMPORTANTE: Substitua "G-XXXXXXXXXX" pelo seu ID de Acompanhamento do Google Analytics 4.
+const GA_MEASUREMENT_ID = "G-JCBS3X5XTC";
+ReactGA.initialize(GA_MEASUREMENT_ID);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
