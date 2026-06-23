@@ -49,14 +49,14 @@ export const projects = [
   // --- SEU PROJETO PESSOAL ---
   {
     id: 'nanaths-day',
-    title: "Nanath's Day",
-    category: 'Marca Pessoal & Content Creation',
+    titleKey: 'projects.nanathsDay.title',
+    categoryKey: 'projects.nanathsDay.category',
     cover: midiaNanathsCover,
-    description: 'Estratégia de influência, curadoria visual e storytelling pessoal. Onde transformo minha rotina em conexão real com a comunidade.',
-    year: '2024 - Presente',
+    descriptionKey: 'projects.nanathsDay.description',
+    yearKey: 'projects.nanathsDay.year',
     links: [
-      { texto: 'Instagram', url: 'https://www.instagram.com/nanathsday/' },
-      { texto: 'Parcerias', url: 'https://nathaliaverri.inspira.dev.br/nanathsday' },
+      { textKey: 'projects.nanathsDay.links.instagram', url: 'https://www.instagram.com/nanathsday/' },
+      { textKey: 'projects.nanathsDay.links.partnerships', url: 'https://nathaliaverri.inspira.dev.br/nanathsday' },
     ],
     gallery: [
       {
@@ -113,27 +113,23 @@ export const projects = [
         link: 'https://www.instagram.com/nanathsday/p/DZh7fCMEWMF/'
       }
     ],
-    content: `
-      O Nanath's Day nasceu como um laboratório criativo e se tornou minha vitrine de marca pessoal. É o espaço onde aplico na prática tudo o que acredito sobre criação de comunidade, autenticidade e tendências digitais.
-      
-      Do roteiro dos Reels à curadoria estética do feed, o foco é construir um lifestyle magnético que inspire e gere identificação genuína, mostrando que os bastidores também são conteúdo de alto valor.
-    `,
+    contentKey: 'projects.nanathsDay.content',
     results: [
-      { valor: '100%', texto: 'Crescimento totalmente orgânico.' },
-      { valor: 'Alto', texto: 'Índice de engajamento nos stories.' },
-      { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
+      { valueKey: 'projects.nanathsDay.results.0.value', textKey: 'projects.nanathsDay.results.0.text' },
+      { valueKey: 'projects.nanathsDay.results.1.value', textKey: 'projects.nanathsDay.results.1.text' },
+      { valueKey: 'projects.nanathsDay.results.2.value', textKey: 'projects.nanathsDay.results.2.text' },
     ],
   },
   //Transfacil
   {
     id: 'transfacil-social-media',
-    title: 'Transfacil: Gestão Estratégica de Redes Sociais',
-    category: 'Marketing Digital & Social Media',
+    titleKey: 'projects.transfacil.title',
+    categoryKey: 'projects.transfacil.category',
     cover: midiaTransfacilCover,
-    description: 'Responsável pela gestão completa das redes sociais da Transfacil, desenvolvendo estratégias de comunicação digital, planejamento editorial e fortalecimento da presença da marca no ambiente online.',
-    year: '2025 - Presente',
+    descriptionKey: 'projects.transfacil.description',
+    yearKey: 'projects.transfacil.year',
     links: [
-      { texto: 'Instagram', url: 'https://www.instagram.com/oficialtransfacil/' },
+      { textKey: 'projects.transfacil.links.instagram', url: 'https://www.instagram.com/oficialtransfacil/' },
     ],
     gallery: [
       {
@@ -181,24 +177,23 @@ export const projects = [
         link: 'https://www.instagram.com/p/DTu-nPgkaxa/'
       }
     ],
-    content: 'Como Social Media Marketing Intern na Transfacil, atuo na gestão estratégica dos canais digitais da empresa, sendo responsável pelo planejamento, produção e acompanhamento de conteúdos para diferentes plataformas.\nMeu trabalho envolve a construção do calendário editorial, definição de pautas alinhadas aos objetivos da marca, análise de tendências, monitoramento de métricas e otimização contínua da comunicação digital.\nAlém da criação de conteúdo, participo do desenvolvimento de campanhas institucionais e promocionais, buscando ampliar o alcance da marca, fortalecer o relacionamento com o público e gerar maior engajamento nas redes sociais.\nA atuação também inclui análise de desempenho, identificação de oportunidades de crescimento e implementação de estratégias voltadas para posicionamento de marca e experiência do usuário nos canais digitais.'
-    ,
+    contentKey: 'projects.transfacil.content',
     results: [
-      { valor: '100%', texto: 'Gestão das redes sociais da empresa.' },
-      { valor: '360°', texto: 'Planejamento, criação e monitoramento de conteúdo.' },
-      { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
+      { valueKey: 'projects.transfacil.results.0.value', textKey: 'projects.transfacil.results.0.text' },
+      { valueKey: 'projects.transfacil.results.1.value', textKey: 'projects.transfacil.results.1.text' },
+      { valueKey: 'projects.transfacil.results.2.value', textKey: 'projects.transfacil.results.2.text' },
     ],
   },
   //Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe
   {
     id: 'ricardo-hamdan-cozinha-arabe',
-    title: 'Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe',
-    category: 'Marketing Digital & Social Media',
+    titleKey: 'projects.ricardoHamdan.title',
+    categoryKey: 'projects.ricardoHamdan.category',
     cover: midiaRicardoHamdanCover,
-    description: 'Desenvolvimento de um projeto de rebranding e posicionamento digital para a marca Ricardo Hamdan Cozinha Árabe, com foco no fortalecimento da identidade da marca, ampliação do alcance digital e atração de novos públicos.',
-    year: '2025',
+    descriptionKey: 'projects.ricardoHamdan.description',
+    yearKey: 'projects.ricardoHamdan.year',
     links: [
-      { texto: 'Instagram', url: 'https://www.instagram.com/ricardo_hamdan/' },
+      { textKey: 'projects.ricardoHamdan.links.instagram', url: 'https://www.instagram.com/ricardo_hamdan/' },
     ],
     gallery: [
       {
@@ -258,11 +253,11 @@ export const projects = [
         link: ''
       }
     ],
-    content: 'Projeto desenvolvido como estudo aplicado na graduação em Publicidade e Propaganda, com o objetivo de analisar a presença digital da marca Ricardo Hamdan Cozinha Árabe e propor estratégias para fortalecer seu posicionamento no mercado.\n\nO trabalho envolveu pesquisas de mercado, análise de concorrência, definição de personas e elaboração de ações voltadas para redes sociais e marketing digital.\n\nAlém do planejamento estratégico, participei da captação de conteúdos para o Instagram da marca, buscando destacar a experiência gastronômica, a autenticidade da culinária árabe e os diferenciais do restaurante.\n\nO projeto teve como foco tornar a comunicação mais atrativa, fortalecer o relacionamento com os clientes e aumentar o reconhecimento da marca no ambiente digital por meio de estratégias de branding, produção de conteúdo e posicionamento online.',
+    contentKey: 'projects.ricardoHamdan.content',
     results: [
-      { valor: 'Branding', texto: 'Desenvolvimento de estratégias de posicionamento e identidade de marca.' },
-      { valor: 'Social', texto: 'Planejamento e criação de conteúdo para redes sociais.' },
-      { valor: 'Digital', texto: 'Pesquisa de mercado, definição de personas e estratégias de marketing digital.' },
+      { valueKey: 'projects.ricardoHamdan.results.0.value', textKey: 'projects.ricardoHamdan.results.0.text' },
+      { valueKey: 'projects.ricardoHamdan.results.1.value', textKey: 'projects.ricardoHamdan.results.1.text' },
+      { valueKey: 'projects.ricardoHamdan.results.2.value', textKey: 'projects.ricardoHamdan.results.2.text' },
     ],
   }
 ];

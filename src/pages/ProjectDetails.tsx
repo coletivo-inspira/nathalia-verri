@@ -1,7 +1,10 @@
 import { useMemo, useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { projects } from '../data/projects';
 import ScrollToTopButton from '../components/ScrollToTopButton';
+import { useViewport } from '../useViewport.ts';
+import { useElementSize } from '../hooks/useElementSize.ts';
 
 // PADRÃO ORIGINAL (Web Desktop) - Espalhado
 const PATTERN_WEB = [
@@ -54,6 +57,7 @@ const PATTERN_MOBILE = [
 const ProjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const project = projects.find((item) => item.id === id);
   const currentIndex = projects.findIndex((p) => p.id === id);
@@ -63,40 +67,12 @@ const ProjectDetails = () => {
   const [autoIndex, setAutoIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
-  // --- CONTROLE DE TELA (Desktop vs Mobile) ---
-  const [isMobile, setIsMobile] = useState(false);
-  const [scale, setScale] = useState(1);
+  // Use the custom hook to manage viewport state
+  const { isMobile, scale } = useViewport();
 
   // NOVO: Referência e Estado para medir a altura da barra lateral dinamicamente
   const sidebarRef = useRef<HTMLElement>(null);
-  const [sidebarHeight, setSidebarHeight] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setIsMobile(width <= 768);
-      setScale(Math.min(1, width / 1700));
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // NOVO: Effect para observar as mudanças de tamanho da barra lateral em tempo real
-  useEffect(() => {
-    if (!sidebarRef.current) return;
-    
-    // O ResizeObserver atualiza a altura mesmo quando a foto carrega ou o texto quebra de linha
-    const resizeObserver = new ResizeObserver((entries) => {
-      if (entries[0]) {
-        setSidebarHeight(entries[0].contentRect.height);
-      }
-    });
-
-    resizeObserver.observe(sidebarRef.current);
-    return () => resizeObserver.disconnect();
-  }, [project?.id]);
+  const { height: sidebarHeight } = useElementSize(sidebarRef);
 
   // Loop de 5 segundos
   useEffect(() => {
@@ -109,21 +85,31 @@ const ProjectDetails = () => {
 
   const isVideo = (url: string) => typeof url === 'string' && (url.includes('.mp4') || url.includes('video-files'));
 
+  // A simple hashing function to make the shuffle deterministic
+  const pseudoRandom = (seed: string) => {
+    let h1 = 1779033703, h2 = 3144134277, h3 = 1013904242, h4 = 2773480762;
+    for (let i = 0, k; i < seed.length; i++) {
+        k = seed.charCodeAt(i);
+        h1 = h2 ^ Math.imul(h1, 597399067); h2 = h3 ^ Math.imul(h2, 2869860233); h3 = h4 ^ Math.imul(h3, 951274213); h4 = h1 ^ Math.imul(h4, 2716044179);
+    }
+    return (h1^h2^h3^h4)>>>0;
+  };
+
   const assignedPositions = useMemo(() => {
     if (!project) return [];
     const N = project.gallery.length;
     const basePattern = isMobile ? PATTERN_MOBILE : PATTERN_WEB;
     const slotsToUse = basePattern.slice(0, N);
-    return [...slotsToUse].sort(() => Math.random() - 0.5);
+    return [...slotsToUse].sort((a, b) => pseudoRandom(a.top + a.left + '') - pseudoRandom(b.top + b.left + ''));
   }, [project?.id, project?.gallery?.length, isMobile]);
 
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f8f6f2] text-zinc-900" style={{ fontFamily: 'var(--font-inter)' }}>
         <div className="text-center">
-          <h1 className="text-3xl mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>Projeto não encontrado</h1>
+          <h1 className="text-3xl mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>{t('projectDetails.notFound')}</h1>
           <button onClick={() => navigate('/')} className="text-sm uppercase tracking-widest hover:text-zinc-500 transition-colors">
-            ← Voltar à Home
+            {t('projectDetails.backToHome')}
           </button>
         </div>
       </div>
@@ -163,39 +149,39 @@ const ProjectDetails = () => {
             className={`inline-flex items-center gap-2 bg-white/50 hover:bg-white rounded-full font-bold uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-all border border-neutral-200/50 shadow-sm ${isMobile ? 'text-[24px] px-8 py-4 mb-10' : 'text-[10px] px-4 py-2 mb-6'}`}
             style={{ fontFamily: 'var(--font-inter)' }}
           >
-            <span>←</span> Voltar
+            <span>←</span> {t('projectDetails.back')}
           </button>
 
           {project.cover && (
             <div className={`rounded-2xl overflow-hidden border border-neutral-200/50 shadow-sm ${isMobile ? 'h-72 mb-10' : 'h-40 mb-6'}`}>
-              <img src={project.cover} alt={`Capa do projeto ${project.title}`} className="w-full h-full object-cover" />
+              <img src={project.cover} alt={t(project.titleKey)} className="w-full h-full object-cover" loading="lazy" />
             </div>
           )}
 
           <h1 className={`leading-[1.1] tracking-tight text-neutral-900 break-words hyphens-auto ${isMobile ? 'text-[90px] mb-10' : 'text-4xl lg:text-[46px] mb-6'}`} style={{ fontFamily: 'var(--font-playfair)' }}>
-            {project.title}
+            {t(project.titleKey)}
           </h1>
 
           <div className={`flex flex-wrap ${isMobile ? 'gap-4 mb-12' : 'gap-2 mb-6'}`}>
-            {project.year && (
-              <span className={`inline-flex bg-neutral-900 border border-neutral-900 rounded-full font-bold uppercase tracking-[0.1em] text-white ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.year}</span>
+            {project.yearKey && (
+              <span className={`inline-flex bg-neutral-900 border border-neutral-900 rounded-full font-bold uppercase tracking-[0.1em] text-white ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t(project.yearKey)}</span>
             )}
-            <span className={`inline-flex bg-white border border-neutral-200 rounded-full font-bold uppercase tracking-[0.1em] text-neutral-500 ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.category}</span>
+            <span className={`inline-flex bg-white border border-neutral-200 rounded-full font-bold uppercase tracking-[0.1em] text-neutral-500 ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t(project.categoryKey)}</span>
           </div>
 
-          {project.description && (
-            <p className={`font-medium text-neutral-700 leading-[1.6] ${isMobile ? 'text-[32px] mb-10' : 'text-[15px] mb-4'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.description}</p>
+          {project.descriptionKey && (
+            <p className={`font-medium text-neutral-700 leading-[1.6] ${isMobile ? 'text-[32px] mb-10' : 'text-[15px] mb-4'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t(project.descriptionKey)}</p>
           )}
 
-          <p className={`text-neutral-600 leading-[1.8] whitespace-pre-line ${isMobile ? 'text-[28px] mb-16' : 'text-[14px] mb-10'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.content}</p>
+          <p className={`text-neutral-600 leading-[1.8] whitespace-pre-line ${isMobile ? 'text-[28px] mb-16' : 'text-[14px] mb-10'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t(project.contentKey)}</p>
 
           {project.links && project.links.length > 0 && (
             <div className={`pt-8 border-t border-neutral-200/80 ${isMobile ? 'mb-16' : 'mb-10'}`}>
-              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Acessar</h3>
+              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t('projectDetails.access')}</h3>
               <div className={`flex flex-col ${isMobile ? 'gap-6' : 'gap-4'}`}>
-                {project.links.map((link, index) => (
+                {project.links.map((link) => (
                   <a
-                    key={index}
+                    key={link.url}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -205,7 +191,7 @@ const ProjectDetails = () => {
                       className={`leading-none text-neutral-900 group-hover:text-neutral-500 transition-colors border-b border-transparent group-hover:border-neutral-300 pb-1 ${isMobile ? 'text-[52px]' : 'text-[26px]'}`}
                       style={{ fontFamily: 'var(--font-playfair)' }}
                     >
-                      {link.texto}
+                      {t(link.textKey)}
                     </span>
                     <span className={`text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ${isMobile ? 'text-[32px] ml-4' : 'text-[16px] ml-2'}`}>
                       ↗
@@ -218,12 +204,12 @@ const ProjectDetails = () => {
 
           {project.results && project.results.length > 0 && (
             <div className={`pt-8 border-t border-neutral-200/80 ${isMobile ? 'mt-10' : 'mt-0'}`}>
-              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Impacto Gerado</h3>
+              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t('projectDetails.impact')}</h3>
               <div className={`flex flex-col ${isMobile ? 'gap-10' : 'gap-6'}`}>
-                {project.results.map((item, index) => (
-                  <div key={index}>
-                    <h4 className={`leading-none text-neutral-900 ${isMobile ? 'text-[72px] mb-4' : 'text-[32px] mb-2'}`} style={{ fontFamily: 'var(--font-playfair)' }}>{item.valor}</h4>
-                    <p className={`text-neutral-500 leading-snug ${isMobile ? 'text-[26px]' : 'text-[13px]'}`} style={{ fontFamily: 'var(--font-inter)' }}>{item.texto}</p>
+                {project.results.map((item) => (
+                  <div key={item.valueKey}>
+                    <h4 className={`leading-none text-neutral-900 ${isMobile ? 'text-[72px] mb-4' : 'text-[32px] mb-2'}`} style={{ fontFamily: 'var(--font-playfair)' }}>{t(item.valueKey)}</h4>
+                    <p className={`text-neutral-500 leading-snug ${isMobile ? 'text-[26px]' : 'text-[13px]'}`} style={{ fontFamily: 'var(--font-inter)' }}>{t(item.textKey)}</p>
                   </div>
                 ))}
               </div>
@@ -239,7 +225,7 @@ const ProjectDetails = () => {
               className={`group w-full flex items-center justify-between bg-neutral-900 text-white hover:bg-neutral-800 rounded-2xl font-bold uppercase tracking-[0.2em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${isMobile ? 'text-[22px] px-10 py-8 mt-4' : 'text-[11px] px-6 py-4'}`}
               style={{ fontFamily: 'var(--font-inter)' }}
             >
-              <span>Próxima Experiência</span>
+              <span>{t('projectDetails.nextExperience')}</span>
               <span className="transform group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </div>
@@ -254,7 +240,7 @@ const ProjectDetails = () => {
 
           return (
             <a
-              key={index}
+              key={item.media}
               href={item.link || '#'}
               target="_blank"
               rel="noreferrer"
@@ -283,9 +269,9 @@ const ProjectDetails = () => {
               >
                 <div className="relative rounded-xl overflow-hidden bg-neutral-50 flex items-center justify-center">
                   {isVideo(item.media) ? (
-                    <video src={item.media} autoPlay muted loop playsInline className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} />
+                    <video src={item.media} autoPlay muted loop playsInline className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} preload="metadata" />
                   ) : (
-                    <img src={item.media} alt={project.title} className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} />
+                    <img src={item.media} alt={t(project.titleKey)} className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} loading="lazy" />
                   )}
                 </div>
               </div>

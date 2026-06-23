@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation();
 
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
@@ -35,7 +37,7 @@ const ScrollToTopButton = () => {
           exit={{ opacity: 0, y: 20 }}
           transition={{ ease: 'easeOut', duration: 0.3 }}
           className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-zinc-900 text-white flex items-center justify-center shadow-lg hover:bg-zinc-700 transition-colors"
-          aria-label="Voltar ao topo"
+          aria-label={t('scrollToTop.label')}
         >
           <ArrowUp size={24} />
         </motion.button>

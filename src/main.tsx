@@ -1,8 +1,11 @@
-﻿import { StrictMode } from 'react'
+﻿﻿import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import ReactGA from 'react-ga4';
+
+// Importe a configuração do i18n
+import './i18n.ts';
 
 import App from './App.tsx'
 import BioLink from './pages/BioLink.tsx'
@@ -17,26 +20,28 @@ ReactGA.initialize(GA_MEASUREMENT_ID);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Adicione o basename aqui 👇 */}
-    <BrowserRouter basename="/">
-      <ScrollRestoration />
-      <Routes>
-        {/* A rota "/" agora vai responder em / */}
-        <Route path="/" element={<App />} />
+    {/* Envolva a aplicação com Suspense para o i18next carregar os idiomas */}
+    <Suspense fallback="Carregando...">
+      <BrowserRouter basename="/">
+        <ScrollRestoration />
+        <Routes>
+          {/* A rota "/" agora vai responder em / */}
+          <Route path="/" element={<App />} />
 
-        {/* A rota "/parcerias" agora vai responder em /parcerias */}
-        <Route path="/nanathsday" element={<BioLink />} />
-        <Route path="/cupons" element={<BioLink />} />
+          {/* A rota "/parcerias" agora vai responder em /parcerias */}
+          <Route path="/nanathsday" element={<BioLink />} />
+          <Route path="/cupons" element={<BioLink />} />
 
-        {/* A rota "/parcerias" agora vai responder em /parcerias */}
-        <Route path="/manual-de-marca" element={<BrandManual />} />
+          {/* A rota "/parcerias" agora vai responder em /parcerias */}
+          <Route path="/manual-de-marca" element={<BrandManual />} />
 
-        {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
-        <Route
-          path="/projeto/:id"
-          element={<ProjectDetails />}
-        />
-      </Routes>
-    </BrowserRouter>
+          {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
+          <Route
+            path="/projeto/:id"
+            element={<ProjectDetails />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   </StrictMode>,
 )

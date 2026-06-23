@@ -1,12 +1,14 @@
-﻿import { motion } from 'framer-motion';
+﻿﻿﻿﻿import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const Experiences = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -32,14 +34,14 @@ const Experiences = () => {
             />
 
             <span className="uppercase tracking-[0.25em] text-xs font-medium text-neutral-400 block mb-6">
-              Portfólio
+              {t('experiences.preTitle')}
             </span>
 
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-neutral-900 tracking-tight leading-[1.05]">
-              Projetos que
+              {t('experiences.title')}
               <br />
               <span className="font-serif italic text-neutral-500">
-                contam histórias.
+                {t('experiences.title_italic')}
               </span>
             </h2>
           </div>
@@ -49,7 +51,7 @@ const Experiences = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-0 md:gap-x-16 lg:gap-x-24">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={project.id} // Assumindo que o `id` é único e estável
               onClick={() => navigate(`/projeto/${project.id}`)}
               initial={{ opacity: 0, y: 80, filter: 'blur(10px)' }}
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -72,7 +74,8 @@ const Experiences = () => {
               >
                 <img
                   src={project.cover}
-                  alt={project.title}
+                  alt={t(project.titleKey)}
+                  loading="lazy"
                   className="
                     absolute inset-0
                     w-full h-full
@@ -111,11 +114,11 @@ const Experiences = () => {
               <div className="mt-6 flex items-start justify-between border-t border-neutral-200 pt-6">
                 <div className="group-hover:translate-x-2 transition-transform duration-500">
                   <h3 className="text-xl md:text-2xl font-light text-neutral-900">
-                    {project.title}
+                    {t(project.titleKey)}
                   </h3>
 
                   <p className="text-xs text-neutral-500 mt-2 tracking-[0.1em] uppercase">
-                    {project.category}
+                    {t(project.categoryKey)}
                   </p>
                 </div>
 

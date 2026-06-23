@@ -1,17 +1,19 @@
-﻿import { useEffect, useState } from 'react';
+﻿﻿﻿﻿import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-
-const links = [
-  { name: 'Início', href: '#home' },
-  { name: 'Sobre', href: '#about' },
-  { name: 'Experiência', href: '#experiences' },
-  { name: 'Contato', href: '#contact' },
-];
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+
+  const links = [
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.experience'), href: '#experiences' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +24,7 @@ const Navbar = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+  
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -39,16 +41,36 @@ const Navbar = () => {
           NV.
         </a>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
-              key={link.name}
+              key={link.href}
               href={link.href}
               className="text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
             >
               {link.name}
             </a>
           ))}
+
+          <div className="flex items-center gap-2 ml-4">
+            <button
+              onClick={() => i18n.changeLanguage('pt')}
+              className={`text-sm font-medium transition-colors ${
+                i18n.language === 'pt' ? 'text-zinc-900' : 'text-zinc-400 hover:text-zinc-900'
+              }`}
+            >
+              PT
+            </button>
+            <span className="text-zinc-300">/</span>
+            <button
+              onClick={() => i18n.changeLanguage('en')}
+              className={`text-sm font-medium transition-colors ${
+                i18n.language === 'en' ? 'text-zinc-900' : 'text-zinc-400 hover:text-zinc-900'
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
 
         <button
@@ -70,7 +92,7 @@ const Navbar = () => {
             <div className="flex flex-col p-6 gap-6">
               {links.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="text-zinc-700"

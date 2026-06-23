@@ -1,10 +1,13 @@
-﻿﻿import { motion } from 'framer-motion';
+﻿﻿﻿﻿import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import imageDesktop from '../assets/1.jpeg';
 import imageMobile from '../assets/1_1.png';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -81,7 +84,7 @@ const Hero = () => {
         >
           {/* Tracking e quebra de texto */}
           <span className="block uppercase tracking-[0.2em] md:tracking-[0.4em] text-xs md:text-sm text-zinc-500 font-medium leading-relaxed">
-            Marketing & Comunicação • Social Media • Estratégia de Conteúdo
+            {t('hero.subTitle')}
           </span>
 
           {/* Título */}
@@ -93,8 +96,7 @@ const Hero = () => {
 
           {/* Descrição */}
           <p className="max-w-2xl text-base sm:text-lg md:text-xl text-zinc-600 mt-6 md:mt-8 leading-relaxed font-light">
-            Transformando comunicação, estratégia e presença digital
-            em experiências que geram conexão e resultados.
+            {t('hero.description')}
           </p>
 
           {/* Botão */}
@@ -108,7 +110,7 @@ const Hero = () => {
                 w-full sm:w-fit
               "
             >
-              Conheça minha trajetória
+              {t('hero.buttonAbout')}
               <ArrowRight size={18} />
             </a>
             <Link
@@ -119,7 +121,7 @@ const Hero = () => {
                 hover:bg-white hover:border-zinc-300 transition-all duration-300
                 w-full sm:w-fit font-medium"
             >
-              Manual da Marca
+              {t('hero.buttonBrandManual')}
             </Link>
           </div>
         </motion.div>

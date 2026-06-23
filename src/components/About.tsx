@@ -1,7 +1,11 @@
-﻿import { motion } from 'framer-motion';
+﻿﻿﻿﻿import { motion } from 'framer-motion';
 import image2 from '../assets/3.jpeg';
+import { useTranslation } from 'react-i18next';
+import { educationItems, skillKeys, experienceItems } from '../data/about';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="about"
@@ -16,7 +20,7 @@ const About = () => {
           transition={{ duration: 0.7 }}
           className="font-playfair text-5xl md:text-7xl lg:text-8xl text-zinc-900 mb-16 lg:mb-24"
         >
-          SOBRE
+          {t('about.title')}
         </motion.h2>
 
         <div className="grid lg:grid-cols-[1fr_1.2fr_1fr] gap-12 lg:gap-20 items-start">
@@ -31,97 +35,49 @@ const About = () => {
             {/* SOBRE */}
             <div className="space-y-8">
               <p className="text-xl lg:text-2xl leading-relaxed text-zinc-700">
-                Estudante de Publicidade e Propaganda com formação técnica em
-                Administração, atuando na interseção entre marketing, comercial e
-                comunicação estratégica.
+                {t('about.description1')}
               </p>
 
               <p className="text-lg leading-relaxed text-zinc-600">
-                Minha experiência reúne prospecção comercial, SDR, relacionamento
-                com clientes, branding, redes sociais e produção de conteúdo,
-                sempre com foco em crescimento de marcas e geração de
-                oportunidades.
+                {t('about.description2')}
               </p>
 
               <p className="text-lg leading-relaxed text-zinc-600">
-                Busco transformar estratégia em resultado através da comunicação,
-                combinando criatividade, análise e visão de negócios.
+                {t('about.description3')}
               </p>
             </div>
 
             {/* FORMAÇÃO */}
             <div>
               <h3 className="font-playfair text-3xl md:text-4xl text-zinc-900 border-b border-zinc-300 pb-4 mb-8">
-                Formação
+                {t('about.educationTitle')}
               </h3>
 
               <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Publicidade e Propaganda
-                  </h4>
-
-                  <p className="text-zinc-500">
-                    UNA • 2025 — 2028
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Embaixadora do Creators Club | Synergy.co
-                  </h4>
-
-                  <p className="text-zinc-500">
-                    Representação e engajamento da comunidade criativa.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Técnico em Administração
-                  </h4>
-
-                  <p className="text-zinc-500">
-                    Formação integrada ao Ensino Médio
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Inglês Intermediário
-                  </h4>
-
-                  <p className="text-zinc-500">
-                    Leitura, escrita e comunicação
-                  </p>
-                </div>
+                {educationItems.map((item) => (
+                  <div key={item.titleKey}>
+                    <h4 className="font-semibold text-zinc-900">
+                      {t(item.titleKey)}
+                    </h4>
+                    <p className="text-zinc-500">{t(item.detailKey)}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* HABILIDADES */}
             <div>
               <h3 className="font-playfair text-3xl md:text-4xl text-zinc-900 border-b border-zinc-300 pb-4 mb-8">
-                Habilidades
+                {t('about.skillsTitle')}
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {[
-                  'Marketing Digital',
-                  'Branding',
-                  'Social Media',
-                  'CRM',
-                  'SDR',
-                  'Canva',
-                  'CapCut',
-                  'Meta Ads',
-                  'Google Ads',
-                  'Pacote Office',
-                  'Criação de Conteúdo',
-                ].map((skill) => (
+                {skillKeys.map((key) => (
                   <span
-                    key={skill}
+                    key={key}
                     className="px-4 py-2 border border-zinc-300 rounded-full text-sm text-zinc-700"
                   >
-                    {skill}
+                    {t(`about.skills.${key}`)}
                   </span>
                 ))}
               </div>
@@ -145,6 +101,7 @@ const About = () => {
                 src={image2}
                 alt="Nathália Verri"
                 className="relative w-full rounded-[24px] object-cover shadow-xl"
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -159,68 +116,23 @@ const About = () => {
           >
             <div className="lg:sticky lg:top-24">
               <h3 className="font-playfair text-3xl md:text-4xl text-zinc-900 border-b border-zinc-300 pb-4 mb-8">
-                Experiência
+                {t('about.experienceTitle')}
               </h3>
 
               <div className="space-y-10">
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Social Media Marketing Intern • Transfacil
-                  </h4>
-
-                  <p className="text-zinc-500 text-sm">
-                    Jul 2025 — o momento
-                  </p>
-
-                  <p className="mt-2 text-zinc-600 leading-relaxed">
-                    Atuo como Social Media, sendo responsável pela gestão de todas as redes sociais da empresa, incluindo o planejamento estratégico, a criação e execução do calendário editorial, além do acompanhamento e otimização dos conteúdos publicados.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Marketing • Emive&CO
-                  </h4>
-
-                  <p className="text-zinc-500 text-sm">
-                    Jun 2023 — Ago 2024
-                  </p>
-
-                  <p className="mt-2 text-zinc-600 leading-relaxed">
-                    Responsável pela prospecção de leads (SDR), contato inicial com
-                    clientes, CRM, comunicação estratégica e nutrição de oportunidades
-                    comerciais.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Assistente de vendas • Hidrau Máquinas
-                  </h4>
-
-                  <p className="text-zinc-500 text-sm">
-                    Mar 2022 — Nov 2022
-                  </p>
-
-                  <p className="mt-2 text-zinc-600 leading-relaxed">
-                    Atuação no setor comercial, entrada de pedidos, transferências de
-                    compradores, atendimento e suporte ao cliente.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-zinc-900">
-                    Assistente Legislativa • Câmara Municipal de Belo Horizonte
-                  </h4>
-
-                  <p className="text-zinc-500 text-sm">
-                    Jan 2019 — Jun 2019
-                  </p>
-
-                  <p className="mt-2 text-zinc-600 leading-relaxed">
-                    Atividades administrativas, secretariado, organização de eventos,
-                    contato com afiliados e registros internos.
-                  </p>
-                </div>
+                {experienceItems.map((exp) => (
+                  <div key={exp.titleKey}>
+                    <h4 className="font-semibold text-zinc-900">
+                      {t(exp.titleKey)}
+                    </h4>
+                    <p className="text-zinc-500 text-sm">
+                      {t(exp.dateKey)}
+                    </p>
+                    <p className="mt-2 text-zinc-600 leading-relaxed">
+                      {t(exp.descriptionKey)}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

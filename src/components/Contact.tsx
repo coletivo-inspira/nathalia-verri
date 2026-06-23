@@ -2,8 +2,11 @@
 import { Mail, Download } from 'lucide-react';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import curriculoPdf from '../assets/Currículo Nathália Verri.pdf';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
@@ -21,23 +24,22 @@ const Contact = () => {
           className="flex flex-col items-center"
         >
           <span className="uppercase tracking-[0.4em] text-sm text-zinc-400 font-medium">
-            Contato
+            {t('contact.preTitle')}
           </span>
 
           <h2 className="text-4xl md:text-6xl font-playfair mt-6 mb-8 text-zinc-100">
-            Vamos criar algo incrível juntos.
+            {t('contact.title')}
           </h2>
 
           <p className="text-zinc-400 text-lg max-w-xl mx-auto leading-relaxed mb-12">
-            Estou disponível para novos projetos, parcerias e oportunidades.
-            Sinta-se à vontade para me mandar uma mensagem.
+            {t('contact.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:contatonanathsday@gmail.com"
+              href={`mailto:${t('contact.email')}`}
               className="
                 group flex items-center justify-center gap-3
                 px-10 py-5 rounded-full bg-white text-zinc-900 font-medium
@@ -49,7 +51,7 @@ const Contact = () => {
                 size={20}
                 className="group-hover:rotate-12 transition-transform duration-300"
               />
-              contatonanathsday@gmail.com
+              {t('contact.email')}
             </motion.a>
 
             <motion.a
@@ -71,7 +73,7 @@ const Contact = () => {
                 size={20}
                 className="group-hover:translate-y-0.5 transition-transform duration-300"
               />
-              Download CV
+              {t('contact.downloadCV')}
             </motion.a>
           </div>
 

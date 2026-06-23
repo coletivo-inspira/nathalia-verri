@@ -1,21 +1,24 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { creatorLinks, socialLinks } from '../data/links';
 import image from '../assets/partnership_image.jpg';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 
 
-const profile = {
-  name: 'Nathália Verri',
-  handle: '@nanathsday',
-  role: 'Cupons & Parcerias',
-  image,
-};
-
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const BioLink = () => {
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
+  const profile = {
+    name: 'Nathália Verri',
+    handle: '@nanathsday',
+    role: t('bioLink.role'),
+    image,
+  };
+
   return (
     <main className="min-h-screen bg-[#F7F5F2] selection:bg-[#6D8C9C] selection:text-white flex flex-col items-center py-20 px-6 relative overflow-hidden">
       {/* Background blur sutil para dar um tom etéreo e fotográfico */}
@@ -39,6 +42,7 @@ const BioLink = () => {
               src={profile.image}
               alt={profile.name}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              loading="lazy"
             />
           </motion.div>
 
@@ -66,7 +70,7 @@ const BioLink = () => {
 
               return (
                 <a
-                  key={index}
+                  key={social.url}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -83,7 +87,7 @@ const BioLink = () => {
         <div className="flex flex-col gap-4">
           {creatorLinks.map((link, index) => (
             <motion.a
-              key={index}
+              key={link.id}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -104,17 +108,18 @@ const BioLink = () => {
               <div className="flex items-center gap-4 pl-2">
                 <img
                   src={link.image}
-                  alt={link.title}
+                  alt={t(link.titleKey)}
                   className="w-10 h-10 rounded-full object-cover"
+                  loading="lazy"
                 />
 
                 <div className="flex flex-col items-start">
                   <span className="font-medium text-sm md:text-base tracking-wide">
-                    {link.title}
+                    {t(link.titleKey)}
                   </span>
 
                   <span className="text-xs mt-0.5 font-light text-neutral-500">
-                    Cupom: {link.code}
+                    {t('bioLink.couponLabel')}: {link.code}
                   </span>
                 </div>
               </div>
@@ -137,7 +142,7 @@ const BioLink = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease }}>
             <Link to="/" className="group block w-full rounded-full p-3 text-center transition-colors hover:bg-white/50">
               <span className="font-medium text-sm tracking-wide text-neutral-600 underline decoration-neutral-300/70 underline-offset-4 transition-colors group-hover:text-neutral-900 group-hover:decoration-neutral-400">
-                Me conheça melhor
+                {t('bioLink.knowMeBetter')}
               </span>
             </Link>
           </motion.div>
@@ -153,7 +158,7 @@ const BioLink = () => {
           <div className="w-px h-12 bg-gradient-to-b from-neutral-300 to-transparent mx-auto mb-6" />
 
           <p className="text-[10px] text-neutral-400 uppercase tracking-[0.3em]">
-            © {new Date().getFullYear()} • Nathália Verri
+            {t('bioLink.copyright', { year: currentYear })}
           </p>
         </motion.div>
       </div>
