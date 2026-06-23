@@ -1,9 +1,10 @@
-﻿import Navbar from './components/Navbar';
+﻿﻿import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experiences from './components/Experiences';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
 
 export default App;
-

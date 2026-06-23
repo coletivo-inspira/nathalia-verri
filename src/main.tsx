@@ -7,11 +7,13 @@ import App from './App.tsx'
 import BioLink from './pages/BioLink.tsx'
 import ProjectDetails from './pages/ProjectDetails.tsx'
 import BrandManual from './pages/BrandManual.tsx'
+import ScrollRestoration from './components/ScrollRestoration.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* Adicione o basename aqui 👇 */}
     <BrowserRouter basename="/">
+      <ScrollRestoration />
       <Routes>
         {/* A rota "/" agora vai responder em / */}
         <Route path="/" element={<App />} />

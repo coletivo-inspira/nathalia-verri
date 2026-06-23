@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 // PADRÃO ORIGINAL (Web Desktop) - Espalhado
 const PATTERN_WEB = [
@@ -292,6 +293,7 @@ const ProjectDetails = () => {
           );
         })}
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };

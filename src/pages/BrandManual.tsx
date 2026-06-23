@@ -8,6 +8,10 @@ import {
 import { motion, type Variants } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/1.jpeg';
+import manual1 from '../assets/manual_1.png';
+import manual2 from '../assets/manual_2.png';
+import manual3 from '../assets/manual_3.png';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 // --- Helper Components ---
 
@@ -108,7 +112,7 @@ const BrandManual = () => {
   const navigate = useNavigate();
 
   const handleNavigateToContact = () => {
-    navigate('/#home');
+    navigate('/#contact');
   };
 
   const pillarIconProps = {
@@ -411,20 +415,14 @@ const BrandManual = () => {
             subtitle="A identidade visual em ação, mantendo a consistência em diferentes pontos de contato."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-video">
-              <img src="https://placehold.co/800x400/FFFFFF/1C1C1C?text=Website" alt="Mockup Website" className="rounded-xl object-contain" />
+            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-square">
+              <img src={manual1} alt="Mockup Website" className="w-full h-full object-contain" />
             </div>
-            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-video">
-              <img src="https://placehold.co/300x600/FFFFFF/1C1C1C?text=Mobile" alt="Mockup Smartphone" className="h-full object-contain" />
+            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-square">
+              <img src={manual2} alt="Mockup Smartphone" className="w-full h-full object-contain" />
             </div>
-            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-video">
-              <img src="https://placehold.co/600x400/FFFFFF/1C1C1C?text=Social+Media" alt="Mockup Social Media" className="rounded-xl object-contain" />
-            </div>
-            <div className="sm:col-span-2 lg:col-span-1 rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-video">
-              <img src="https://placehold.co/500x300/FFFFFF/1C1C1C?text=Business+Card" alt="Mockup Cartão de Visita" className="rounded-xl object-contain" />
-            </div>
-            <div className="sm:col-span-2 lg:col-span-2 rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-video lg:aspect-auto">
-              <img src="https://placehold.co/1000x600/FFFFFF/1C1C1C?text=Notebook" alt="Mockup Notebook" className="rounded-xl object-contain h-full" />
+            <div className="rounded-3xl p-6 bg-zinc-100/70 border border-zinc-200/60 flex items-center justify-center aspect-square">
+              <img src={manual3} alt="Mockup Social Media" className="w-full h-full object-contain" />
             </div>
           </div>
         </Section>
@@ -509,6 +507,7 @@ const BrandManual = () => {
           </div>
         </Section>
       </main>
+      <ScrollToTopButton />
     </div>
   );
 };
