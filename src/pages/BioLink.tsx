@@ -81,13 +81,6 @@ const BioLink = () => {
 
         {/* Links Section */}
         <div className="flex flex-col gap-4">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease }}>
-            <Link to="/" className="group block w-full rounded-full p-3 text-center transition-colors hover:bg-white/50">
-              <span className="font-medium text-sm tracking-wide text-neutral-600 underline decoration-neutral-300/70 underline-offset-4 transition-colors group-hover:text-neutral-900 group-hover:decoration-neutral-400">
-                Me conheça melhor
-              </span>
-            </Link>
-          </motion.div>
           {creatorLinks.map((link, index) => (
             <motion.a
               key={index}
@@ -141,6 +134,13 @@ const BioLink = () => {
               </div>
             </motion.a>
           ))}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease }}>
+            <Link to="/" className="group block w-full rounded-full p-3 text-center transition-colors hover:bg-white/50">
+              <span className="font-medium text-sm tracking-wide text-neutral-600 underline decoration-neutral-300/70 underline-offset-4 transition-colors group-hover:text-neutral-900 group-hover:decoration-neutral-400">
+                Me conheça melhor
+              </span>
+            </Link>
+          </motion.div>
         </div>
 
         {/* Footer */}
