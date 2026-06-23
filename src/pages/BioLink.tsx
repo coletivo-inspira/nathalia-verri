@@ -15,9 +15,9 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const BioLink = () => {
   return (
-    <main className="min-h-screen bg-[#faf8f6] selection:bg-zinc-900 selection:text-white flex flex-col items-center py-20 px-6 relative overflow-hidden">
+    <main className="min-h-screen bg-[#F7F5F2] selection:bg-[#6D8C9C] selection:text-white flex flex-col items-center py-20 px-6 relative overflow-hidden">
       {/* Background blur sutil para dar um tom etéreo e fotográfico */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#eaded2] rounded-full blur-3xl opacity-30 pointer-events-none" />
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#6D8C9C] rounded-full blur-3xl opacity-20 pointer-events-none" />
 
       <div className="w-full max-w-md mx-auto relative z-10">
         {/* Profile Section */}
@@ -40,7 +40,7 @@ const BioLink = () => {
             />
           </motion.div>
 
-          <h1 className="text-3xl md:text-4xl font-playfair text-zinc-900 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-playfair text-neutral-900 tracking-tight">
             {profile.name}
           </h1>
 
@@ -48,12 +48,12 @@ const BioLink = () => {
             href="https://instagram.com/nanathsday"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-zinc-500 mt-2 mb-4 hover:text-zinc-900 transition-colors tracking-wide"
+            className="text-sm font-medium text-neutral-500 mt-2 mb-4 hover:text-neutral-900 transition-colors tracking-wide"
           >
             {profile.handle}
           </a>
 
-          <p className="text-xs text-zinc-400 uppercase tracking-[0.3em] font-medium">
+          <p className="text-xs text-neutral-400 uppercase tracking-[0.3em] font-medium">
             {profile.role}
           </p>
 
@@ -68,7 +68,7 @@ const BioLink = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md border border-white/40 flex items-center justify-center text-zinc-600 hover:text-zinc-900 hover:bg-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md border border-white/40 flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-white transition-all duration-300"
                 >
                   <Icon size={18} />
                 </a>
@@ -95,7 +95,7 @@ const BioLink = () => {
               className="
                 group relative w-full flex items-center justify-between p-4 rounded-full
                 transition-all duration-500 ease-out hover:scale-[1.02]
-                bg-white/60 backdrop-blur-md text-zinc-900 shadow-sm
+                bg-white/60 backdrop-blur-md text-neutral-900 shadow-sm
                 hover:shadow-md hover:bg-white border border-white/40
               "
             >
@@ -111,7 +111,7 @@ const BioLink = () => {
                     {link.title}
                   </span>
 
-                  <span className="text-xs mt-0.5 font-light text-zinc-500">
+                  <span className="text-xs mt-0.5 font-light text-neutral-500">
                     Cupom: {link.code}
                   </span>
                 </div>
@@ -120,14 +120,14 @@ const BioLink = () => {
               <div
                 className="
                   w-10 h-10 rounded-full flex items-center justify-center
-                  transition-all duration-300 group-hover:rotate-45 mr-1
-                  bg-zinc-50 group-hover:bg-zinc-100
+                  transition-all duration-300 group-hover:rotate-45 mr-1 bg-neutral-100/50
+                  group-hover:bg-neutral-100
                 "
               >
                 <ArrowUpRight
                   size={18}
                   strokeWidth={1.5}
-                  className="text-zinc-400 group-hover:text-zinc-900"
+                  className="text-neutral-400 group-hover:text-neutral-900"
                 />
               </div>
             </motion.a>
@@ -141,9 +141,9 @@ const BioLink = () => {
           transition={{ duration: 1, delay: 1 }}
           className="mt-20 text-center"
         >
-          <div className="w-px h-12 bg-gradient-to-b from-zinc-300 to-transparent mx-auto mb-6" />
+          <div className="w-px h-12 bg-gradient-to-b from-neutral-300 to-transparent mx-auto mb-6" />
 
-          <p className="text-[10px] text-zinc-400 uppercase tracking-[0.3em]">
+          <p className="text-[10px] text-neutral-400 uppercase tracking-[0.3em]">
             © {new Date().getFullYear()} • Nathália Verri
           </p>
         </motion.div>

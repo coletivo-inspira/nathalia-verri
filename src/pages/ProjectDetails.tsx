@@ -147,7 +147,7 @@ const ProjectDetails = () => {
   const canvasHeight = Math.max(baseMinHeight, heightFromImages, heightFromSidebar);
 
   return (
-    <div className="min-h-screen bg-[#f8f6f2] text-zinc-900 selection:bg-rose-200 overflow-hidden relative" style={{ height: (canvasHeight * scale) + 'px' }}>
+    <div className="min-h-screen bg-[#F7F5F2] text-neutral-800 selection:bg-[#6D8C9C] selection:text-white overflow-hidden relative" style={{ height: (canvasHeight * scale) + 'px' }}>
       <div
         className="project-canvas absolute"
         style={{ width: '1700px', height: canvasHeight + 'px', transform: 'scale(' + scale + ')', transformOrigin: 'top center', left: '50%', marginLeft: '-850px' }}
@@ -155,42 +155,42 @@ const ProjectDetails = () => {
         {/* NOVO: Adicionei o ref={sidebarRef} na tag aside abaixo */}
         <aside 
           ref={sidebarRef}
-          className={`absolute top-[80px] left-[70px] z-50 bg-[#f8f6f2]/85 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${isMobile ? 'w-[750px] p-14' : 'w-[350px] p-10'}`}
+          className={`absolute top-[80px] left-[70px] z-50 bg-[#F7F5F2]/85 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${isMobile ? 'w-[750px] p-14' : 'w-[350px] p-10'}`}
         >
           <button
             onClick={() => navigate('/')}
-            className={`inline-flex items-center gap-2 bg-white/50 hover:bg-white rounded-full font-bold uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-900 transition-all border border-zinc-200/50 shadow-sm ${isMobile ? 'text-[24px] px-8 py-4 mb-10' : 'text-[10px] px-4 py-2 mb-6'}`}
+            className={`inline-flex items-center gap-2 bg-white/50 hover:bg-white rounded-full font-bold uppercase tracking-[0.2em] text-neutral-500 hover:text-neutral-900 transition-all border border-neutral-200/50 shadow-sm ${isMobile ? 'text-[24px] px-8 py-4 mb-10' : 'text-[10px] px-4 py-2 mb-6'}`}
             style={{ fontFamily: 'var(--font-inter)' }}
           >
             <span>←</span> Voltar
           </button>
 
           {project.cover && (
-            <div className={`rounded-2xl overflow-hidden border border-zinc-200/50 shadow-sm ${isMobile ? 'h-72 mb-10' : 'h-40 mb-6'}`}>
+            <div className={`rounded-2xl overflow-hidden border border-neutral-200/50 shadow-sm ${isMobile ? 'h-72 mb-10' : 'h-40 mb-6'}`}>
               <img src={project.cover} alt={`Capa do projeto ${project.title}`} className="w-full h-full object-cover" />
             </div>
           )}
 
-          <h1 className={`leading-[1.1] tracking-tight text-zinc-900 break-words hyphens-auto ${isMobile ? 'text-[90px] mb-10' : 'text-4xl lg:text-[46px] mb-6'}`} style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h1 className={`leading-[1.1] tracking-tight text-neutral-900 break-words hyphens-auto ${isMobile ? 'text-[90px] mb-10' : 'text-4xl lg:text-[46px] mb-6'}`} style={{ fontFamily: 'var(--font-playfair)' }}>
             {project.title}
           </h1>
 
           <div className={`flex flex-wrap ${isMobile ? 'gap-4 mb-12' : 'gap-2 mb-6'}`}>
             {project.year && (
-              <span className={`inline-flex bg-zinc-900 border border-zinc-900 rounded-full font-bold uppercase tracking-[0.1em] text-white ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.year}</span>
+              <span className={`inline-flex bg-neutral-900 border border-neutral-900 rounded-full font-bold uppercase tracking-[0.1em] text-white ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.year}</span>
             )}
-            <span className={`inline-flex bg-white border border-zinc-200 rounded-full font-bold uppercase tracking-[0.1em] text-zinc-500 ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.category}</span>
+            <span className={`inline-flex bg-white border border-neutral-200 rounded-full font-bold uppercase tracking-[0.1em] text-neutral-500 ${isMobile ? 'text-[20px] px-6 py-3' : 'text-[10px] px-3 py-1.5'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.category}</span>
           </div>
 
           {project.description && (
-            <p className={`font-medium text-zinc-800 leading-[1.6] ${isMobile ? 'text-[32px] mb-10' : 'text-[15px] mb-4'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.description}</p>
+            <p className={`font-medium text-neutral-700 leading-[1.6] ${isMobile ? 'text-[32px] mb-10' : 'text-[15px] mb-4'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.description}</p>
           )}
 
-          <p className={`text-zinc-600 leading-[1.8] whitespace-pre-line ${isMobile ? 'text-[28px] mb-16' : 'text-[14px] mb-10'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.content}</p>
+          <p className={`text-neutral-600 leading-[1.8] whitespace-pre-line ${isMobile ? 'text-[28px] mb-16' : 'text-[14px] mb-10'}`} style={{ fontFamily: 'var(--font-inter)' }}>{project.content}</p>
 
           {project.links && project.links.length > 0 && (
-            <div className={`pt-8 border-t border-zinc-200/80 ${isMobile ? 'mb-16' : 'mb-10'}`}>
-              <h3 className={`font-bold uppercase tracking-[0.2em] text-zinc-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Acessar</h3>
+            <div className={`pt-8 border-t border-neutral-200/80 ${isMobile ? 'mb-16' : 'mb-10'}`}>
+              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Acessar</h3>
               <div className={`flex flex-col ${isMobile ? 'gap-6' : 'gap-4'}`}>
                 {project.links.map((link, index) => (
                   <a
@@ -201,12 +201,12 @@ const ProjectDetails = () => {
                     className="group flex items-center w-fit transition-all duration-300"
                   >
                     <span
-                      className={`leading-none text-zinc-900 group-hover:text-zinc-500 transition-colors border-b border-transparent group-hover:border-zinc-300 pb-1 ${isMobile ? 'text-[52px]' : 'text-[26px]'}`}
+                      className={`leading-none text-neutral-900 group-hover:text-neutral-500 transition-colors border-b border-transparent group-hover:border-neutral-300 pb-1 ${isMobile ? 'text-[52px]' : 'text-[26px]'}`}
                       style={{ fontFamily: 'var(--font-playfair)' }}
                     >
                       {link.texto}
                     </span>
-                    <span className={`text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ${isMobile ? 'text-[32px] ml-4' : 'text-[16px] ml-2'}`}>
+                    <span className={`text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ${isMobile ? 'text-[32px] ml-4' : 'text-[16px] ml-2'}`}>
                       ↗
                     </span>
                   </a>
@@ -216,26 +216,26 @@ const ProjectDetails = () => {
           )}
 
           {project.results && project.results.length > 0 && (
-            <div className={`pt-8 border-t border-zinc-200/80 ${isMobile ? 'mt-10' : 'mt-0'}`}>
-              <h3 className={`font-bold uppercase tracking-[0.2em] text-zinc-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Impacto Gerado</h3>
+            <div className={`pt-8 border-t border-neutral-200/80 ${isMobile ? 'mt-10' : 'mt-0'}`}>
+              <h3 className={`font-bold uppercase tracking-[0.2em] text-neutral-400 ${isMobile ? 'text-[24px] mb-12' : 'text-[10px] mb-6'}`} style={{ fontFamily: 'var(--font-inter)' }}>Impacto Gerado</h3>
               <div className={`flex flex-col ${isMobile ? 'gap-10' : 'gap-6'}`}>
                 {project.results.map((item, index) => (
                   <div key={index}>
-                    <h4 className={`leading-none text-zinc-900 ${isMobile ? 'text-[72px] mb-4' : 'text-[32px] mb-2'}`} style={{ fontFamily: 'var(--font-playfair)' }}>{item.valor}</h4>
-                    <p className={`text-zinc-500 leading-snug ${isMobile ? 'text-[26px]' : 'text-[13px]'}`} style={{ fontFamily: 'var(--font-inter)' }}>{item.texto}</p>
+                    <h4 className={`leading-none text-neutral-900 ${isMobile ? 'text-[72px] mb-4' : 'text-[32px] mb-2'}`} style={{ fontFamily: 'var(--font-playfair)' }}>{item.valor}</h4>
+                    <p className={`text-neutral-500 leading-snug ${isMobile ? 'text-[26px]' : 'text-[13px]'}`} style={{ fontFamily: 'var(--font-inter)' }}>{item.texto}</p>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          <div className="mt-12 pt-8 border-t border-zinc-200/80">
+          <div className="mt-12 pt-8 border-t border-neutral-200/80">
             <button
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 setTimeout(() => navigate(`/projeto/${nextProject.id}`), 300);
               }}
-              className={`group w-full flex items-center justify-between bg-zinc-900 text-white hover:bg-zinc-800 rounded-2xl font-bold uppercase tracking-[0.2em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${isMobile ? 'text-[22px] px-10 py-8 mt-4' : 'text-[11px] px-6 py-4'}`}
+              className={`group w-full flex items-center justify-between bg-neutral-900 text-white hover:bg-neutral-800 rounded-2xl font-bold uppercase tracking-[0.2em] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${isMobile ? 'text-[22px] px-10 py-8 mt-4' : 'text-[11px] px-6 py-4'}`}
               style={{ fontFamily: 'var(--font-inter)' }}
             >
               <span>Próxima Experiência</span>
@@ -272,7 +272,7 @@ const ProjectDetails = () => {
               }}
             >
               <div
-                className="relative bg-white rounded-2xl border border-zinc-100 transition-all duration-500"
+                className="relative bg-white rounded-2xl border border-neutral-100 transition-all duration-500"
                 style={{
                   padding: isMobile ? '24px' : '16px',
                   boxShadow: isActive
@@ -280,7 +280,7 @@ const ProjectDetails = () => {
                     : '0 10px 40px rgba(0,0,0,0.06)'
                 }}
               >
-                <div className="relative rounded-xl overflow-hidden bg-zinc-50 flex items-center justify-center">
+                <div className="relative rounded-xl overflow-hidden bg-neutral-50 flex items-center justify-center">
                   {isVideo(item.media) ? (
                     <video src={item.media} autoPlay muted loop playsInline className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} />
                   ) : (

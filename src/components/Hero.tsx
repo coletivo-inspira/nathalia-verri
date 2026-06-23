@@ -1,5 +1,6 @@
-﻿import { motion } from 'framer-motion';
+﻿﻿import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import imageDesktop from '../assets/1.jpeg';
 import imageMobile from '../assets/1_1.png';
 
@@ -110,6 +111,16 @@ const Hero = () => {
               Conheça minha trajetória
               <ArrowRight size={18} />
             </a>
+            <Link
+              to="/manual-de-marca"
+              className="
+                px-8 py-4 bg-white/50 border border-zinc-200/80 text-zinc-700 rounded-full
+                flex items-center justify-center
+                hover:bg-white hover:border-zinc-300 transition-all duration-300
+                w-full sm:w-fit font-medium"
+            >
+              Manual da Marca
+            </Link>
           </div>
         </motion.div>
       </div>
