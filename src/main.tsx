@@ -9,6 +9,7 @@ import BioLink from './pages/BioLink.tsx'
 import ProjectDetails from './pages/ProjectDetails.tsx'
 import BrandManual from './pages/BrandManual.tsx'
 import ScrollRestoration from './components/ScrollRestoration.tsx';
+import MidiaKit from './pages/MidiaKit'; 
 
 // INICIALIZA O GOOGLE ANALYTICS
 // IMPORTANTE: Substitua "G-XXXXXXXXXX" pelo seu ID de Acompanhamento do Google Analytics 4.
@@ -30,6 +31,8 @@ createRoot(document.getElementById('root')!).render(
 
         {/* A rota "/parcerias" agora vai responder em /parcerias */}
         <Route path="/manual-de-marca" element={<BrandManual />} />
+
+        <Route path="/midia-kit" element={<MidiaKit />} />
 
         {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
         <Route
