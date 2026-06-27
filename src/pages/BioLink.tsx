@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import { creatorLinks, socialLinks } from '../data/links';
 import image from '../assets/partnership_image.jpg';
 import ScrollToTopButton from '../components/ScrollToTopButton';
@@ -16,6 +18,26 @@ const profile = {
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const BioLink = () => {
+  // --- RASTREAMENTO DO GOOGLE ANALYTICS ---
+
+  // Função para rastrear cliques nos links de parcerias.
+  const handleCreatorLinkClick = (title: string, url: string) => {
+    ReactGA.event({
+      category: 'BioLink',
+      action: 'Clique em Link de Parceria',
+      label: `${title} - ${url}`,
+    });
+  };
+
+  // Função para rastrear cliques nos links de redes sociais.
+  const handleSocialLinkClick = (url: string) => {
+    ReactGA.event({
+      category: 'BioLink',
+      action: 'Clique em Link Social',
+      label: url,
+    });
+  };
+
   return (
     <main className="min-h-screen bg-[#F7F5F2] selection:bg-[#6D8C9C] selection:text-white flex flex-col items-center py-20 px-6 relative overflow-hidden">
       {/* Background blur sutil para dar um tom etéreo e fotográfico */}
@@ -70,6 +92,7 @@ const BioLink = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleSocialLinkClick(social.url)}
                   className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-md border border-white/40 flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-white transition-all duration-300"
                 >
                   <Icon size={18} />
@@ -87,6 +110,7 @@ const BioLink = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleCreatorLinkClick(link.title, link.url)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
