@@ -196,7 +196,7 @@ const BrandManual = () => {
         <Section className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-1 text-center">
             <div className="inline-block bg-white p-12 rounded-3xl border border-zinc-200/70">
-              <span className="font-playfair text-8xl text-zinc-800">NV</span>
+              <span className="font-playfair text-8xl text-zinc-800">NV.</span>
             </div>
           </div>
           <div className="md:col-span-2">
@@ -326,7 +326,7 @@ const BrandManual = () => {
           </div>
         </Section>
 
-        {/* 6. Direção Fotográfica */}
+        {/* 6. Direção Fotográfica
         <Section>
           <SectionHeader
             title="Direção Fotográfica"
@@ -358,7 +358,7 @@ const BrandManual = () => {
             <li>Foco em pessoas, detalhes e processos</li>
             <li>Composição minimalista</li>
           </ul>
-        </Section>
+        </Section> */}
 
         {/* 7. Tom de Voz */}
         <Section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

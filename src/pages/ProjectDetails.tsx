@@ -86,7 +86,7 @@ const ProjectDetails = () => {
   // NOVO: Effect para observar as mudanças de tamanho da barra lateral em tempo real
   useEffect(() => {
     if (!sidebarRef.current) return;
-    
+
     // O ResizeObserver atualiza a altura mesmo quando a foto carrega ou o texto quebra de linha
     const resizeObserver = new ResizeObserver((entries) => {
       if (entries[0]) {
@@ -137,10 +137,10 @@ const ProjectDetails = () => {
 
   const baseMinHeight = isMobile ? 2000 : 1000;
   const paddingBottom = isMobile ? 1200 : 800;
-  
+
   // Calcula o espaço necessário pelas imagens
   const heightFromImages = maxTop + paddingBottom;
-  
+
   // Calcula o espaço necessário pela barra lateral (posição top de 80px + altura do conteúdo + um respiro embaixo)
   const heightFromSidebar = 80 + sidebarHeight + (isMobile ? 200 : 100);
 
@@ -154,7 +154,7 @@ const ProjectDetails = () => {
         style={{ width: '1700px', height: canvasHeight + 'px', transform: 'scale(' + scale + ')', transformOrigin: 'top center', left: '50%', marginLeft: '-850px' }}
       >
         {/* NOVO: Adicionei o ref={sidebarRef} na tag aside abaixo */}
-        <aside 
+        <aside
           ref={sidebarRef}
           className={`absolute top-[80px] left-[70px] z-50 bg-[#F7F5F2]/85 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${isMobile ? 'w-[750px] p-14' : 'w-[350px] p-10'}`}
         >
@@ -250,46 +250,79 @@ const ProjectDetails = () => {
           const pos = assignedPositions[index];
           if (!pos) return null;
 
-          const isActive = hoverIndex === index || (hoverIndex === null && autoIndex === index);
+          const isActive =
+            hoverIndex === index || (hoverIndex === null && autoIndex === index);
 
-          return (
-            <a
-              key={index}
-              href={item.link || '#'}
-              target="_blank"
-              rel="noreferrer"
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
-              className="absolute block transition-all duration-700 ease-out"
+          const commonProps = {
+            onMouseEnter: () => setHoverIndex(index),
+            onMouseLeave: () => setHoverIndex(null),
+            className: "absolute block transition-all duration-700 ease-out",
+            style: {
+              top: `${pos.top}px`,
+              left: `${pos.left}px`,
+              width: `${pos.width}px`,
+              height: "auto",
+              transform: isActive
+                ? `translateY(-${isMobile ? 32 : 16}px) scale(1.05) rotate(${pos.rotate}deg)`
+                : `rotate(${pos.rotate}deg)`,
+              zIndex: isActive ? 9999 : 1,
+            } as React.CSSProperties,
+          };
+
+          const content = (
+            <div
+              className="relative bg-white rounded-2xl border border-neutral-100 transition-all duration-500"
               style={{
-                top: pos.top + 'px',
-                left: pos.left + 'px',
-                width: pos.width + 'px',
-                height: 'auto',
-                transform: isActive
-                  ? `translateY(-${isMobile ? 32 : 16}px) scale(1.05) rotate(${pos.rotate}deg)`
-                  : `rotate(${pos.rotate}deg)`,
-                zIndex: isActive ? 9999 : 1,
+                padding: isMobile ? "24px" : "16px",
+                boxShadow: isActive
+                  ? "0 30px 70px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08)"
+                  : "0 10px 40px rgba(0,0,0,0.06)",
               }}
             >
-              <div
-                className="relative bg-white rounded-2xl border border-neutral-100 transition-all duration-500"
-                style={{
-                  padding: isMobile ? '24px' : '16px',
-                  boxShadow: isActive
-                    ? '0 30px 70px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.08)'
-                    : '0 10px 40px rgba(0,0,0,0.06)'
-                }}
-              >
-                <div className="relative rounded-xl overflow-hidden bg-neutral-50 flex items-center justify-center">
-                  {isVideo(item.media) ? (
-                    <video src={item.media} autoPlay muted loop playsInline className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} />
-                  ) : (
-                    <img src={item.media} alt={project.title} className="w-full h-auto block rounded-xl" style={{ objectFit: 'contain' }} />
-                  )}
-                </div>
+              <div className="relative rounded-xl overflow-hidden bg-neutral-50 flex items-center justify-center">
+                {isVideo(item.media) ? (
+                  <video
+                    src={item.media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-auto block rounded-xl"
+                    style={{ objectFit: "contain" }}
+                  />
+                ) : (
+                  <img
+                    src={item.media}
+                    alt={project.title}
+                    className="w-full h-auto block rounded-xl"
+                    style={{ objectFit: "contain" }}
+                  />
+                )}
               </div>
-            </a>
+            </div>
+          );
+
+          const hasLink =
+            typeof item.link === "string" && item.link.trim().length > 0;
+
+          if (hasLink) {
+            return (
+              <a
+                key={index}
+                {...commonProps}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={index} {...commonProps}>
+              {content}
+            </div>
           );
         })}
       </div>

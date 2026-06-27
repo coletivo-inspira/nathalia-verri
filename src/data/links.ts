@@ -45,10 +45,34 @@ export const socialLinks = [
 
 export const creatorLinks = [
     {
+        title: 'HOLY FOODS',
+        code: 'NAGALOVE',
+        image: holyfoods,
+        url: 'https://holyfoods.com.br/',
+    },
+    {
+        title: 'PANGEIA96',
+        code: 'NAGALOVE10',
+        image: pangeia96,
+        url: 'https://www.pangeia96.com.br/',
+    },
+    {
         title: 'MAX TITANIUM',
         code: 'MAX10NAGALOVE',
         image: maxTitanium,
         url: 'https://www.maxtitanium.com.br/',
+    },
+    {
+        title: 'HEY!MU',
+        code: 'NANATHS',
+        image: heymu,
+        url: 'https://www.heymu.com.br/',
+    },
+    {
+        title: 'SLEEPO',
+        code: 'NANATH20',
+        image: sleepo,
+        url: 'https://sleepo.com.br/',
     },
     {
         title: 'GLAM BEAUTY',
@@ -62,12 +86,7 @@ export const creatorLinks = [
         image: gummy,
         url: 'https://www.gummy.com.br/',
     },
-    {
-        title: 'PANGEIA96',
-        code: 'NAGALOVE10',
-        image: pangeia96,
-        url: 'https://www.pangeia96.com.br/',
-    },
+
     {
         title: 'YSY JOIAS',
         code: 'NAGALOVE',
@@ -98,34 +117,19 @@ export const creatorLinks = [
         image: drpeanut,
         url: 'https://www.drpeanut.com.br/',
     },
+
+
+
     {
-        title: 'BEM VIVER',
-        code: 'BVNAGALOVE',
-        image: bemviver,
-        url: 'https://bemvivertapetearte.com.br/',
-    },
-        {
-        title: 'HEY!MU',
-        code: 'NANATHS',
-        image: heymu,
-        url: 'https://www.heymu.com.br/',
-    },
-        {
-        title: 'SLEEPO',
-        code: 'NANATH20',
-        image: sleepo,
-        url: 'https://sleepo.com.br/',
-    },
-        {
         title: 'BAW CLOTHING',
         code: 'BAWNANATHSDAY',
         image: baw,
         url: 'https://www.bawclothing.com.br/',
     },
-        {
-        title: 'HOLY FOODS',
-        code: 'NAGALOVE',
-        image: holyfoods,
-        url: 'https://holyfoods.com.br/',
+    {
+        title: 'BEM VIVER',
+        code: 'BVNAGALOVE',
+        image: bemviver,
+        url: 'https://bemvivertapetearte.com.br/',
     },
 ];
