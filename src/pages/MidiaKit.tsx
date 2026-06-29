@@ -299,7 +299,7 @@ export default function MidiaKit() {
       {creatorLinks && creatorLinks.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 pb-24">
           <SectionTitle>Parcerias Recentes</SectionTitle>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {creatorLinks.map((link) => (
               <a href={link.url} key={link.title} target="_blank" rel="noopener noreferrer" className="group block">
                 <Card className="!p-3 hover:border-zinc-300 transition-colors flex flex-col h-full">
@@ -469,9 +469,7 @@ export function MoodboardSection() {
 
         {/* Cabeçalho de Texto */}
         <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left z-20">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-zinc-900 mb-4 md:mb-6">
-            Moodboard <br className="hidden md:block" /> e Estética
-          </h2>
+          <SectionTitle>Moodboard e Estética</SectionTitle>
           <a
             href="https://instagram.com/nanathsday"
             target="_blank"
