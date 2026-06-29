@@ -1,6 +1,5 @@
 ﻿﻿import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import imageDesktop from '../assets/1.jpeg';
 import imageMobile from '../assets/1_1.png';
 
