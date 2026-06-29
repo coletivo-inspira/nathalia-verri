@@ -81,7 +81,7 @@ const About = () => {
                   </h4>
 
                   <p className="text-zinc-500">
-                    Formação integrada ao Ensino Médio
+                    Formação técnica em gestão e processos administrativos.
                   </p>
                 </div>
 
@@ -116,6 +116,10 @@ const About = () => {
                   'Google Ads',
                   'Pacote Office',
                   'Criação de Conteúdo',
+                  'Copywriting',
+                  'Storytelling',
+                  'Planejamento de Conteúdo',
+                  'Estratégia Digital',
                 ].map((skill) => (
                   <span
                     key={skill}
@@ -165,7 +169,7 @@ const About = () => {
               <div className="space-y-10">
                 <div>
                   <h4 className="font-semibold text-zinc-900">
-                    Social Media Marketing Intern • Transfacil
+                    Social Media • Transfacil
                   </h4>
 
                   <p className="text-zinc-500 text-sm">
@@ -178,7 +182,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-zinc-900">
-                    Marketing • Emive&CO
+                    Marketing • Emive
                   </h4>
 
                   <p className="text-zinc-500 text-sm">

@@ -30,9 +30,9 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/cupons" element={<BioLink />} />
 
         {/* A rota "/parcerias" agora vai responder em /parcerias */}
-        <Route path="/manual-de-marca" element={<BrandManual />} />
+        <Route path="/identidade-visual" element={<BrandManual />} />
 
-        <Route path="/midia-kit" element={<MidiaKit />} />
+        <Route path="/midia-kit-nanathsday" element={<MidiaKit />} />
 
         {/* A rota "/projeto/:id" agora vai responder em /projeto/:id */}
         <Route

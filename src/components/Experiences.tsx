@@ -46,7 +46,7 @@ const Experiences = () => {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-0 md:gap-x-16 lg:gap-x-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 md:gap-y-0 md:gap-x-16 lg:gap-x-24">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -60,15 +60,17 @@ const Experiences = () => {
                 ease,
               }}
               className={`
-                group cursor-pointer
+                group cursor-pointer flex flex-col items-center text-center
                 ${index % 2 === 1 ? 'md:mt-40 lg:mt-56' : ''}
               `}
             >
+              {/* Contêiner da Imagem (Agora 100% Redondo) */}
               <div
-                className={`
-                  relative overflow-hidden rounded-3xl bg-neutral-100
-                  ${index % 2 === 0 ? 'aspect-[4/5]' : 'aspect-square'}
-                `}
+                className="
+                  relative overflow-hidden rounded-full bg-neutral-100
+                  aspect-square w-full max-w-[85%] md:max-w-[420px]
+                  shadow-sm hover:shadow-xl transition-all duration-700
+                "
               >
                 <img
                   src={project.cover}
@@ -84,8 +86,10 @@ const Experiences = () => {
                   "
                 />
 
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-700" />
+                {/* Overlay Escuro com borda arredondada para respeitar o clipping */}
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-black/20 transition-colors duration-700 rounded-full" />
 
+                {/* Botão Central de Interação */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div
                     className="
@@ -108,8 +112,13 @@ const Experiences = () => {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-start justify-between border-t border-neutral-200 pt-6">
-                <div className="group-hover:translate-x-2 transition-transform duration-500">
+              {/* Informações do Projeto - Centralizadas para equilibrar com o círculo */}
+              <div className="mt-8 flex flex-col items-center w-full max-w-[85%] md:max-w-[420px]">
+                <span className="text-sm text-neutral-300 font-serif italic mb-3 transition-transform duration-500">
+                  0{index + 1}
+                </span>
+                
+                <div className="group-hover:-translate-y-1 transition-transform duration-500">
                   <h3 className="text-xl md:text-2xl font-light text-neutral-900">
                     {project.title}
                   </h3>
@@ -118,10 +127,6 @@ const Experiences = () => {
                     {project.category}
                   </p>
                 </div>
-
-                <span className="text-sm text-neutral-300 font-serif italic group-hover:-translate-x-2 transition-transform duration-500">
-                  0{index + 1}
-                </span>
               </div>
             </motion.div>
           ))}

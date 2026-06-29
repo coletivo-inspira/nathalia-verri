@@ -111,7 +111,7 @@ const Hero = () => {
               Conheça minha trajetória
               <ArrowRight size={18} />
             </a>
-            <Link
+            {/* <Link
               to="/manual-de-marca"
               className="
                 px-8 py-4 bg-white/50 border border-zinc-200/80 text-zinc-700 rounded-full
@@ -120,7 +120,7 @@ const Hero = () => {
                 w-full sm:w-fit font-medium"
             >
               Manual da Marca
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       </div>

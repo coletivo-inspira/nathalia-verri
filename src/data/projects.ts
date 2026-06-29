@@ -46,6 +46,148 @@ import midiaRicardoHamdan14 from '../assets/ricardo-hamdan-cozinha-arabe-14.mp4'
 
 
 export const projects = [
+  //Transfacil
+  {
+    id: 'transfacil-social-media',
+    title: 'Transfacil: Gestão Estratégica de Redes Sociais',
+    category: 'Marketing Digital & Social Media',
+    cover: midiaTransfacilCover,
+    description: 'Responsável pela gestão completa das redes sociais da Transfacil, desenvolvendo estratégias de comunicação digital, planejamento editorial e fortalecimento da presença da marca no ambiente online.',
+    year: '2025 - Presente',
+    links: [
+      { texto: 'Instagram', url: 'https://www.instagram.com/oficialtransfacil/' },
+    ],
+    gallery: [
+      {
+        media: midiaTransfacil1,
+        link: 'https://www.instagram.com/p/DZvIo5mGljY/?img_index=1'
+      },
+      {
+        media: midiaTransfacil2,
+        link: 'https://www.instagram.com/p/DZDG5xSAou5/'
+      },
+      {
+        media: midiaTransfacil3,
+        link: 'https://www.instagram.com/p/DXwh6AagMID/?img_index=4'
+      },
+      {
+        media: midiaTransfacil4,
+        link: 'https://www.instagram.com/p/DXhreTxD_go/'
+      },
+      {
+        media: midiaTransfacil5,
+        link: 'https://www.instagram.com/p/DXWvkUCgIRh/'
+      },
+      {
+        media: midiaTransfacil6,
+        link: 'https://www.instagram.com/p/DW7NwhZj2dj/'
+      },
+      {
+        media: midiaTransfacil7,
+        link: 'https://www.instagram.com/p/DWzVNPAj7nW/?img_index=1'
+      },
+      {
+        media: midiaTransfacil8,
+        link: 'https://www.instagram.com/p/DWmayf_j_pR/'
+      },
+      {
+        media: midiaTransfacil9,
+        link: 'https://www.instagram.com/p/DWHO4KJgPKa/'
+      },
+      {
+        media: midiaTransfacil10,
+        link: 'https://www.instagram.com/p/DV8vD5mgLRP/'
+      },
+      {
+        media: midiaTransfacil11,
+        link: 'https://www.instagram.com/p/DTu-nPgkaxa/'
+      }
+    ],
+    content: 'Como Social Media na Transfacil, atuo na gestão estratégica dos canais digitais da empresa, sendo responsável pelo planejamento, produção e acompanhamento de conteúdos para diferentes plataformas.\nMeu trabalho envolve a construção do calendário editorial, definição de pautas alinhadas aos objetivos da marca, análise de tendências, monitoramento de métricas e otimização contínua da comunicação digital.\nAlém da criação de conteúdo, participo do desenvolvimento de campanhas institucionais e promocionais, buscando ampliar o alcance da marca, fortalecer o relacionamento com o público e gerar maior engajamento nas redes sociais.\nA atuação também inclui análise de desempenho, identificação de oportunidades de crescimento e implementação de estratégias voltadas para posicionamento de marca e experiência do usuário nos canais digitais.'
+    ,
+    results: [
+      { valor: '100%', texto: 'Gestão das redes sociais da empresa.' },
+      { valor: '360°', texto: 'Planejamento, criação e monitoramento de conteúdo.' },
+      { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
+    ],
+  },
+  
+  //Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe
+  {
+    id: 'ricardo-hamdan-cozinha-arabe',
+    title: 'Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe',
+    category: 'Marketing Digital & Social Media',
+    cover: midiaRicardoHamdanCover,
+    description: 'Desenvolvimento de um projeto de rebranding e posicionamento digital para a marca Ricardo Hamdan Cozinha Árabe, com foco no fortalecimento da identidade da marca, ampliação do alcance digital e atração de novos públicos.',
+    year: '2025',
+    links: [
+      { texto: 'Instagram', url: 'https://www.instagram.com/ricardo_hamdan/' },
+    ],
+    gallery: [
+      {
+        media: midiaRicardoHamdan1,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan2,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan3,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan4,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan5,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan6,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan7,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan8,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan9,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan10,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan11,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan12,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan13,
+        link: ''
+      },
+      {
+        media: midiaRicardoHamdan14,
+        link: ''
+      }
+    ],
+    content: 'Projeto desenvolvido como estudo aplicado na graduação em Publicidade e Propaganda, com o objetivo de analisar a presença digital da marca Ricardo Hamdan Cozinha Árabe e propor estratégias para fortalecer seu posicionamento no mercado.\n\nO trabalho envolveu pesquisas de mercado, análise de concorrência, definição de personas e elaboração de ações voltadas para redes sociais e marketing digital.\n\nAlém do planejamento estratégico, participei da captação de conteúdos para o Instagram da marca, buscando destacar a experiência gastronômica, a autenticidade da culinária árabe e os diferenciais do restaurante.\n\nO projeto teve como foco tornar a comunicação mais atrativa, fortalecer o relacionamento com os clientes e aumentar o reconhecimento da marca no ambiente digital por meio de estratégias de branding, produção de conteúdo e posicionamento online.',
+    results: [
+      { valor: 'Branding', texto: 'Desenvolvimento de estratégias de posicionamento e identidade de marca.' },
+      { valor: 'Social', texto: 'Planejamento e criação de conteúdo para redes sociais.' },
+      { valor: 'Digital', texto: 'Pesquisa de mercado, definição de personas e estratégias de marketing digital.' },
+    ],
+  },
   // --- SEU PROJETO PESSOAL ---
   {
     id: 'nanaths-day',
@@ -124,145 +266,5 @@ export const projects = [
       { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
     ],
   },
-  //Transfacil
-  {
-    id: 'transfacil-social-media',
-    title: 'Transfacil: Gestão Estratégica de Redes Sociais',
-    category: 'Marketing Digital & Social Media',
-    cover: midiaTransfacilCover,
-    description: 'Responsável pela gestão completa das redes sociais da Transfacil, desenvolvendo estratégias de comunicação digital, planejamento editorial e fortalecimento da presença da marca no ambiente online.',
-    year: '2025 - Presente',
-    links: [
-      { texto: 'Instagram', url: 'https://www.instagram.com/oficialtransfacil/' },
-    ],
-    gallery: [
-      {
-        media: midiaTransfacil1,
-        link: 'https://www.instagram.com/p/DZvIo5mGljY/?img_index=1'
-      },
-      {
-        media: midiaTransfacil2,
-        link: 'https://www.instagram.com/p/DZDG5xSAou5/'
-      },
-      {
-        media: midiaTransfacil3,
-        link: 'https://www.instagram.com/p/DXwh6AagMID/?img_index=4'
-      },
-      {
-        media: midiaTransfacil4,
-        link: 'https://www.instagram.com/p/DXhreTxD_go/'
-      },
-      {
-        media: midiaTransfacil5,
-        link: 'https://www.instagram.com/p/DXWvkUCgIRh/'
-      },
-      {
-        media: midiaTransfacil6,
-        link: 'https://www.instagram.com/p/DW7NwhZj2dj/'
-      },
-      {
-        media: midiaTransfacil7,
-        link: 'https://www.instagram.com/p/DWzVNPAj7nW/?img_index=1'
-      },
-      {
-        media: midiaTransfacil8,
-        link: 'https://www.instagram.com/p/DWmayf_j_pR/'
-      },
-      {
-        media: midiaTransfacil9,
-        link: 'https://www.instagram.com/p/DWHO4KJgPKa/'
-      },
-      {
-        media: midiaTransfacil10,
-        link: 'https://www.instagram.com/p/DV8vD5mgLRP/'
-      },
-      {
-        media: midiaTransfacil11,
-        link: 'https://www.instagram.com/p/DTu-nPgkaxa/'
-      }
-    ],
-    content: 'Como Social Media Marketing Intern na Transfacil, atuo na gestão estratégica dos canais digitais da empresa, sendo responsável pelo planejamento, produção e acompanhamento de conteúdos para diferentes plataformas.\nMeu trabalho envolve a construção do calendário editorial, definição de pautas alinhadas aos objetivos da marca, análise de tendências, monitoramento de métricas e otimização contínua da comunicação digital.\nAlém da criação de conteúdo, participo do desenvolvimento de campanhas institucionais e promocionais, buscando ampliar o alcance da marca, fortalecer o relacionamento com o público e gerar maior engajamento nas redes sociais.\nA atuação também inclui análise de desempenho, identificação de oportunidades de crescimento e implementação de estratégias voltadas para posicionamento de marca e experiência do usuário nos canais digitais.'
-    ,
-    results: [
-      { valor: '100%', texto: 'Gestão das redes sociais da empresa.' },
-      { valor: '360°', texto: 'Planejamento, criação e monitoramento de conteúdo.' },
-      { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
-    ],
-  },
-  //Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe
-  {
-    id: 'ricardo-hamdan-cozinha-arabe',
-    title: 'Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe',
-    category: 'Marketing Digital & Social Media',
-    cover: midiaRicardoHamdanCover,
-    description: 'Desenvolvimento de um projeto de rebranding e posicionamento digital para a marca Ricardo Hamdan Cozinha Árabe, com foco no fortalecimento da identidade da marca, ampliação do alcance digital e atração de novos públicos.',
-    year: '2025',
-    links: [
-      { texto: 'Instagram', url: 'https://www.instagram.com/ricardo_hamdan/' },
-    ],
-    gallery: [
-      {
-        media: midiaRicardoHamdan1,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan2,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan3,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan4,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan5,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan6,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan7,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan8,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan9,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan10,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan11,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan12,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan13,
-        link: ''
-      },
-      {
-        media: midiaRicardoHamdan14,
-        link: ''
-      }
-    ],
-    content: 'Projeto desenvolvido como estudo aplicado na graduação em Publicidade e Propaganda, com o objetivo de analisar a presença digital da marca Ricardo Hamdan Cozinha Árabe e propor estratégias para fortalecer seu posicionamento no mercado.\n\nO trabalho envolveu pesquisas de mercado, análise de concorrência, definição de personas e elaboração de ações voltadas para redes sociais e marketing digital.\n\nAlém do planejamento estratégico, participei da captação de conteúdos para o Instagram da marca, buscando destacar a experiência gastronômica, a autenticidade da culinária árabe e os diferenciais do restaurante.\n\nO projeto teve como foco tornar a comunicação mais atrativa, fortalecer o relacionamento com os clientes e aumentar o reconhecimento da marca no ambiente digital por meio de estratégias de branding, produção de conteúdo e posicionamento online.',
-    results: [
-      { valor: 'Branding', texto: 'Desenvolvimento de estratégias de posicionamento e identidade de marca.' },
-      { valor: 'Social', texto: 'Planejamento e criação de conteúdo para redes sociais.' },
-      { valor: 'Digital', texto: 'Pesquisa de mercado, definição de personas e estratégias de marketing digital.' },
-    ],
-  }
+  
 ];
