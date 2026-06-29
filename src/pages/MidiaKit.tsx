@@ -24,7 +24,10 @@ import { ChevronLeft, MoreHorizontal, Grid, Film, UserSquare } from "lucide-reac
 
 // Importações (Ajuste os caminhos conforme a estrutura do seu projeto)
 import { creatorLinks } from "../data/links";
-import heroImage from "../assets/1.jpeg"; // Imagem principal do portfólio
+import heroImage from "../assets/partnership_image.jpg";// Imagem principal do portfólio
+import aboutImage from "../assets/1.jpeg";
+import instagram from "../assets/instagram.png";
+import tiktok from "../assets/tiktok.png";
 import nanathsdayProfileImage from "../assets/partnership_image.jpg"; // Imagem de perfil da persona "nanathsday"
 import moodboardImg1 from "../assets/instagram_1.png";
 import moodboardImg2 from "../assets/instagram_2.png";
@@ -121,125 +124,183 @@ export default function MidiaKit() {
       </section>
 
       {/* 2. SOBRE MIM & NICHOS */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
         <SectionTitle>Sobre Mim</SectionTitle>
-        <div className="grid lg:grid-cols-3 gap-6">
-          <Card className="lg:col-span-2">
-            <p className="text-base md:text-lg leading-relaxed md:leading-9 text-zinc-600">
+
+        {/* Grid alterado para 4 colunas no desktop. lg:items-stretch garante que todos tenham a mesma altura */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 lg:items-stretch">
+
+          {/* IMAGEM NA ESQUERDA (Ocupa 1 coluna) */}
+          <div className="relative rounded-[2rem] md:rounded-3xl overflow-hidden bg-zinc-200 lg:col-span-1 h-[300px] sm:h-[400px] lg:h-auto">
+            {/* DICA: Para diminuir ou aumentar a altura da imagem EXCLUSIVAMENTE no mobile, altere o valor h-[300px] acima */}
+            <img
+              src={aboutImage} // <-- Não se esqueça de colocar sua variável de imagem aqui!
+              alt="Sobre Mim"
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          {/* TEXTO CENTRAL (Ocupa 2 colunas) */}
+          <Card className="lg:col-span-2 flex flex-col justify-center">
+            <p className="text-sm md:text-lg leading-relaxed md:leading-9 text-zinc-600">
               O <strong>nanathsday</strong> nasceu como um laboratório criativo e se tornou minha vitrine de marca pessoal. É o espaço onde aplico na prática tudo o que acredito sobre criação de comunidade, autenticidade e tendências digitais.
               <br /><br />
               Do roteiro dos Reels à curadoria estética do feed, o foco é construir um lifestyle magnético que inspire e gere identificação genuína, mostrando que os bastidores também são conteúdo de alto valor.
             </p>
           </Card>
 
-          <Card className="bg-zinc-900 text-white border-none flex flex-col justify-center">
-            <h3 className="font-bold text-2xl mb-6">Meus Pilares</h3>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3"><Sparkles size={20} className="text-[#6D8C9C]" /> Beleza & Autocuidado</li>
-              <li className="flex items-center gap-3"><Coffee size={20} className="text-[#6D8C9C]" /> Lifestyle & Rotina</li>
-              <li className="flex items-center gap-3"><Plane size={20} className="text-[#6D8C9C]" /> Viagens & Experiências</li>
-              <li className="flex items-center gap-3"><Shirt size={20} className="text-[#6D8C9C]" /> Moda & Estilo</li>
+          {/* PILARES NA DIREITA (Ocupa 1 coluna) */}
+          <Card className="bg-zinc-900 text-white border-none flex flex-col justify-center lg:col-span-1">
+            <h3 className="font-bold text-xl md:text-2xl mb-4 md:mb-6">Meus Pilares</h3>
+            <ul className="space-y-3 md:space-y-4">
+              <li className="flex items-center gap-3 text-sm md:text-base">
+                <Sparkles size={20} className="text-[#6D8C9C] flex-shrink-0" /> Beleza & Autocuidado
+              </li>
+              <li className="flex items-center gap-3 text-sm md:text-base">
+                <Coffee size={20} className="text-[#6D8C9C] flex-shrink-0" /> Lifestyle & Rotina
+              </li>
+              <li className="flex items-center gap-3 text-sm md:text-base">
+                <Plane size={20} className="text-[#6D8C9C] flex-shrink-0" /> Viagens & Experiências
+              </li>
+              <li className="flex items-center gap-3 text-sm md:text-base">
+                <Shirt size={20} className="text-[#6D8C9C] flex-shrink-0" /> Moda & Estilo
+              </li>
             </ul>
           </Card>
+
         </div>
       </section>
 
-      {/* 3. PÚBLICO */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+{/* 3. PÚBLICO */}
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
         <SectionTitle>Meu Público</SectionTitle>
-        <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card>
-            <Users className="mb-5 text-zinc-400" size={32} />
-            <h3 className="text-3xl sm:text-4xl font-black">Feminino</h3>
-            <p className="text-zinc-500 mt-2">Maior Público (92,8%)</p>
+        <motion.div 
+          variants={staggerContainer} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true }} 
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6"
+        >
+          <Card className="p-4 md:p-6">
+            <Users className="mb-3 md:mb-5 text-zinc-400" size={24} />
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black">Feminino</h3>
+            <p className="text-zinc-500 mt-1 text-[10px] md:text-sm">Maior Público (92,8%)</p>
           </Card>
-          <Card>
-            <Heart className="mb-5 text-zinc-400" size={32} />
-            <h3 className="text-3xl sm:text-4xl font-black">18-34</h3>
-            <p className="text-zinc-500 mt-2">Faixa Etária Principal (72,9%)</p>
+          
+          <Card className="p-4 md:p-6">
+            <Heart className="mb-3 md:mb-5 text-zinc-400" size={24} />
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black">18-34</h3>
+            <p className="text-zinc-500 mt-1 text-[10px] md:text-sm">Faixa Etária (72,9%)</p>
           </Card>
-          <Card>
-            <Briefcase className="mb-5 text-zinc-400" size={32} />
-            <h3 className="text-3xl sm:text-4xl font-black">Sudeste</h3>
-            <p className="text-zinc-500 mt-2">SP, RJ e BH (MG)</p>
+          
+          <Card className="p-4 md:p-6">
+            <Briefcase className="mb-3 md:mb-5 text-zinc-400" size={24} />
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black">Sudeste</h3>
+            <p className="text-zinc-500 mt-1 text-[10px] md:text-sm">SP, RJ e BH (MG)</p>
           </Card>
-          <Card>
-            <Sparkles className="mb-5 text-zinc-400" size={32} />
-            <h3 className="text-3xl sm:text-4xl font-black">Lifestyle</h3>
-            <p className="text-zinc-500 mt-2">Principal Interesse</p>
+          
+          <Card className="p-4 md:p-6">
+            <Sparkles className="mb-3 md:mb-5 text-zinc-400" size={24} />
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black">Lifestyle</h3>
+            <p className="text-zinc-500 mt-1 text-[10px] md:text-sm">Principal Interesse</p>
           </Card>
         </motion.div>
       </section>
 
       {/* 4. PLATAFORMAS */}
-      <section id="plataformas" className="max-w-7xl mx-auto px-6 pb-24">
-        <SectionTitle>Plataformas & Entregas</SectionTitle>
+      <section id="plataformas" className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
+        <SectionTitle>Plataformas e Entregas</SectionTitle>
 
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
 
           {/* Módulo INSTAGRAM */}
           <Card className="p-0 overflow-hidden">
-            <div className="p-8 lg:p-12">
-              <div className="flex items-center justify-between mb-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-zinc-800 rounded-2xl flex items-center justify-center text-white">
-                    <FaInstagram size={32} />
+            <div className="p-5 md:p-8 lg:p-12">
+
+              {/* Grid Principal: Divide o conteúdo (esquerda) da Imagem (direita) no Desktop */}
+              <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:items-stretch">
+
+                {/* LADO ESQUERDO: Textos e Métricas (Ocupa 8 colunas no desktop) */}
+                <div className="lg:col-span-8 flex flex-col justify-center">
+
+                  {/* Header do Instagram */}
+                  <div className="flex items-center justify-between mb-6 md:mb-10">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-zinc-800 rounded-xl md:rounded-2xl flex items-center justify-center text-white flex-shrink-0">
+                        <FaInstagram className="w-6 h-6 md:w-8 md:h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-3xl font-black text-zinc-900 leading-tight">Instagram</h3>
+                        <a href="https://instagram.com/nanathsday" target="_blank" rel="noopener noreferrer" className="text-[#6D8C9C] text-sm md:text-base font-medium hover:underline">@nanathsday</a>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-3xl font-black text-zinc-900">Instagram</h3>
-                    <a href="https://instagram.com/nanathsday" target="_blank" rel="noopener noreferrer" className="text-[#6D8C9C] font-medium hover:underline">@nanathsday</a>
+
+                  {/* Grid de Métricas e Formatos */}
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+                    {/* Métricas e Resultados */}
+                    <div>
+                      <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wider mb-4 md:mb-6">Métricas de Desempenho</h4>
+                      <div className="grid grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">12.65K</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Seguidores</span>
+                        </div>
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">17.5%</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Engajamento</span>
+                        </div>
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">+33K</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide block leading-tight mt-1">Visualizações<br />(Últ. 30 dias)</span>
+                        </div>
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">1.7K</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide block leading-tight mt-1">Views<br />Stories</span>
+                        </div>
+                      </div>
+
+                      <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-zinc-100 grid grid-cols-3 gap-2 md:gap-4">
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">100%</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Crescimento orgânico</p>
+                        </div>
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">Alto</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Engajamento nos stories</p>
+                        </div>
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">Vitrine</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Portfólio vivo</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Formatos */}
+                    <div className="bg-[#fafafa] rounded-xl md:rounded-2xl p-5 md:p-6 border border-zinc-100 h-fit">
+                      <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wider mb-3 md:mb-4">Formatos de Entrega</h4>
+                      <ul className="space-y-2.5 md:space-y-3 text-sm md:text-base text-zinc-700 font-medium">
+                        <li className="flex items-start md:items-center gap-3"><div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div> <span>Reels Patrocinados (Roteiro e Edição)</span></li>
+                        <li className="flex items-start md:items-center gap-3"><div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div> <span>Sequência de Stories com Link</span></li>
+                        <li className="flex items-start md:items-center gap-3"><div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div> <span>Posts no Feed / Carrossel</span></li>
+                        <li className="flex items-start md:items-center gap-3"><div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div> <span>Cobertura de Eventos / Reviews</span></li>
+                      </ul>
+                    </div>
+
                   </div>
                 </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Métricas e Resultados */}
-                <div>
-                  <h4 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-6">Métricas de Desempenho</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">12.65K</p>
-                      <span className="text-zinc-500">Seguidores</span>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">17.5%</p>
-                      <span className="text-zinc-500">Engajamento</span>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">+33K</p>
-                      <span className="text-zinc-500">Visualizações (Últimos 30 dias)</span>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">1.7K</p>
-                      <span className="text-zinc-500">Views Stories</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 pt-8 border-t border-zinc-100 grid grid-cols-3 gap-4">
-                    <div>
-                      <p className="font-black text-zinc-900 text-lg">100%</p>
-                      <p className="text-xs text-zinc-500 font-medium">Crescimento orgânico</p>
-                    </div>
-                    <div>
-                      <p className="font-black text-zinc-900 text-lg">Alto</p>
-                      <p className="text-xs text-zinc-500 font-medium">Engajamento nos stories</p>
-                    </div>
-                    <div>
-                      <p className="font-black text-zinc-900 text-lg">Vitrine</p>
-                      <p className="text-xs text-zinc-500 font-medium">Portfólio vivo</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Formatos */}
-                <div className="bg-[#fafafa] rounded-2xl p-6 border border-zinc-100 h-fit">
-                  <h4 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-4">Formatos de Entrega</h4>
-                  <ul className="space-y-3 text-zinc-700 font-medium">
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Reels Patrocinados (Roteiro e Edição)</li>
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Sequência de Stories com Link</li>
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Posts no Feed / Carrossel</li>
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Cobertura de Eventos / Reviews</li>
-                  </ul>
+                {/* LADO DIREITO: Imagem (Ocupa 4 colunas no desktop) */}
+                <div
+                  className="lg:col-span-4 relative rounded-xl md:rounded-2xl overflow-hidden bg-zinc-200 w-full
+                  h-[250px] sm:h-[350px] lg:h-auto"
+                >
+                  <img
+                    src={instagram} // <-- Substitua pela sua variável de imagem!
+                    alt="Preview do Instagram"
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
             </div>
@@ -247,48 +308,98 @@ export default function MidiaKit() {
 
           {/* Módulo TIKTOK */}
           <Card className="p-0 overflow-hidden">
-            <div className="p-8 lg:p-12">
-              <div className="flex items-center justify-between mb-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white">
-                    <FaTiktok size={32} />
-                  </div>
-                  <div>
-                    <h3 className="text-3xl font-black text-zinc-900">TikTok</h3>
-                    <a href="https://tiktok.com/@nanathsday" target="_blank" rel="noopener noreferrer" className="text-zinc-500 font-medium hover:underline">@nanathsday</a>
-                  </div>
-                </div>
-              </div>
+            <div className="p-5 md:p-8 lg:p-12">
 
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Métricas */}
-                <div>
-                  <h4 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-6">Métricas de Desempenho</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">2.14K</p>
-                      <span className="text-zinc-500">Seguidores</span>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">14.3%</p>
-                      <span className="text-zinc-500">Engajamento</span>
-                    </div>
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black text-zinc-900">984</p>
-                      <span className="text-zinc-500">Views Médias</span>
+              {/* Grid Principal */}
+              <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:items-stretch">
+
+                {/* LADO ESQUERDO NA WEB / SUPERIOR NO MOBILE: Textos e Métricas */}
+                <div className="lg:col-span-8 flex flex-col justify-center">
+
+                  {/* Header do TikTok */}
+                  <div className="flex items-center justify-between mb-6 md:mb-10">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-black rounded-xl md:rounded-2xl flex items-center justify-center text-white flex-shrink-0">
+                        <FaTiktok className="w-5 h-5 md:w-7 md:h-7" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-3xl font-black text-zinc-900 leading-tight">TikTok</h3>
+                        <a href="https://tiktok.com/@nanathsday" target="_blank" rel="noopener noreferrer" className="text-zinc-500 text-sm md:text-base font-medium hover:underline">@nanathsday</a>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Grid de Métricas e Formatos */}
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+
+                    {/* Métricas */}
+                    <div>
+                      <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wider mb-4 md:mb-6">Métricas de Desempenho</h4>
+                      <div className="grid grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">2.14K</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Seguidores</span>
+                        </div>
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">14.3%</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Engajamento</span>
+                        </div>
+                        <div>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">984</p>
+                          <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Views Médias</span>
+                        </div>
+                      </div>
+                      <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-zinc-100 grid grid-cols-3 gap-2 md:gap-4">
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">100%</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Crescimento orgânico</p>
+                        </div>
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">Alto</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Engajamento nos stories</p>
+                        </div>
+                        <div>
+                          <p className="font-black text-zinc-900 text-sm md:text-lg">Vitrine</p>
+                          <p className="text-[9px] md:text-xs text-zinc-500 font-medium leading-tight mt-0.5">Portfólio vivo</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Formatos */}
+                    <div className="bg-[#fafafa] rounded-xl md:rounded-2xl p-5 md:p-6 border border-zinc-100 h-fit">
+                      <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wider mb-3 md:mb-4">Formatos de Entrega</h4>
+                      <ul className="space-y-2.5 md:space-y-3 text-sm md:text-base text-zinc-700 font-medium">
+                        <li className="flex items-start md:items-center gap-3">
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div>
+                          <span>Vídeos Nativos e Trends</span>
+                        </li>
+                        <li className="flex items-start md:items-center gap-3">
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div>
+                          <span>Conteúdo UGC para a Marca</span>
+                        </li>
+                        <li className="flex items-start md:items-center gap-3">
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#6D8C9C] mt-2 md:mt-0 flex-shrink-0"></div>
+                          <span>Unboxing & Reviews rápidos</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+
                 </div>
 
-                {/* Formatos */}
-                <div className="bg-[#fafafa] rounded-2xl p-6 border border-zinc-100">
-                  <h4 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-4">Formatos de Entrega</h4>
-                  <ul className="space-y-3 text-zinc-700 font-medium">
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Vídeos Nativos e Trends</li>
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Conteúdo UGC para a Marca</li>
-                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#6D8C9C]"></div> Unboxing & Reviews rápidos</li>
-                  </ul>
+                {/* LADO DIREITO NA WEB / INFERIOR NO MOBILE: Imagem */}
+                <div
+                  className="lg:col-span-4 relative rounded-xl md:rounded-2xl overflow-hidden bg-zinc-200 w-full
+                  h-[250px] sm:h-[350px] lg:h-auto"
+                >
+                  <img
+                    src={tiktok} // <-- Substitua pela sua imagem do TikTok!
+                    alt="Preview do TikTok"
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
+
               </div>
             </div>
           </Card>
@@ -296,26 +407,37 @@ export default function MidiaKit() {
         </div>
       </section>
 
-      {/* 5. PROJETOS / PORTFÓLIO */}
-      {creatorLinks && creatorLinks.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 pb-24">
-          <SectionTitle>Parcerias Recentes</SectionTitle>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {creatorLinks.map((link) => (
-              <a href={link.url} key={link.title} target="_blank" rel="noopener noreferrer" className="group block">
-                <Card className="!p-3 hover:border-zinc-300 transition-colors flex flex-col h-full">
-                  <div className="w-full aspect-square rounded-xl overflow-hidden mb-3 bg-zinc-100 flex items-center justify-center p-3">
-                    <img src={link.image} alt={link.title} className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="mt-auto text-center">
-                    <h3 className="font-black text-base text-zinc-900 truncate" title={link.title}>{link.title}</h3>
-                  </div>
-                </Card>
-              </a>
-            ))}
-          </motion.div>
-        </section>
-      )}
+{/* 5. PROJETOS / PORTFÓLIO */}
+{creatorLinks && creatorLinks.length > 0 && (
+  <section className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
+    <SectionTitle>Parcerias Recentes</SectionTitle>
+    
+    <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
+      {creatorLinks.map((link) => (
+        <a href={link.url} key={link.title} target="_blank" rel="noopener noreferrer" className="group block">
+          <Card className="!p-2 md:!p-4 hover:border-zinc-300 transition-colors flex flex-col items-center shadow-none border-transparent hover:border-zinc-200">
+            
+            {/* Adicionado border-[2px] border-zinc-900 */}
+            <div className="w-full aspect-square rounded-full overflow-hidden mb-3 bg-zinc-100 relative border-[2px] border-zinc-900">
+              <img 
+                src={link.image} 
+                alt={link.title} 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+              />
+            </div>
+
+            <div className="text-center w-full">
+              <h3 className="font-bold text-[10px] sm:text-xs md:text-sm text-zinc-800 truncate" title={link.title}>
+                {link.title}
+              </h3>
+            </div>
+            
+          </Card>
+        </a>
+      ))}
+    </motion.div>
+  </section>
+)}
 
       {/* 6. O PROCESSO CRIATIVO */}
       <section className="max-w-7xl mx-auto px-6 pb-24">

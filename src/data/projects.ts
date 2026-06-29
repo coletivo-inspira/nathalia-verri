@@ -111,7 +111,7 @@ export const projects = [
       { valor: 'Multi', texto: 'Atuação em diferentes plataformas digitais.' },
     ],
   },
-  
+
   //Rebranding e Estratégia Digital – Ricardo Hamdan Cozinha Árabe
   {
     id: 'ricardo-hamdan-cozinha-arabe',
@@ -198,7 +198,8 @@ export const projects = [
     year: '2024 - Presente',
     links: [
       { texto: 'Instagram', url: 'https://www.instagram.com/nanathsday/' },
-      { texto: 'Parcerias', url: 'https://nathaliaverri.inspira.dev.br/nanathsday' },
+      { texto: 'Parcerias', url: 'https://nathaliaverri.inspira.dev.br/cupons' },
+      { texto: 'Midia Kit', url: 'https://nathaliaverri.inspira.dev.br/nanathsday/midia-kit' },
     ],
     gallery: [
       {
@@ -266,5 +267,5 @@ export const projects = [
       { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
     ],
   },
-  
+
 ];
