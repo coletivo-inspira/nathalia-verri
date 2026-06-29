@@ -17,14 +17,15 @@ import {
   Send,
   Bookmark,
 } from "lucide-react";
-import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
 import { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, MoreHorizontal, Grid, Film, UserSquare } from "lucide-react";
 
 // Importações (Ajuste os caminhos conforme a estrutura do seu projeto)
 import { creatorLinks } from "../data/links";
-import profileImage from "../assets/partnership_image.jpg";
+import heroImage from "../assets/1.jpeg"; // Imagem principal do portfólio
+import nanathsdayProfileImage from "../assets/partnership_image.jpg"; // Imagem de perfil da persona "nanathsday"
 import moodboardImg1 from "../assets/instagram_1.png";
 import moodboardImg2 from "../assets/instagram_2.png";
 import moodboardImg3 from "../assets/instagram_3.png";
@@ -111,7 +112,7 @@ export default function MidiaKit() {
 
           <motion.div whileHover={{ scale: 1.02 }} className="relative order-1 lg:order-2">
             <img
-              src={profileImage}
+              src={heroImage}
               alt="Nathália Verri"
               className="rounded-3xl w-full max-h-[600px] object-cover shadow-xl"
             />
@@ -299,7 +300,7 @@ export default function MidiaKit() {
       {creatorLinks && creatorLinks.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 pb-24">
           <SectionTitle>Parcerias Recentes</SectionTitle>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {creatorLinks.map((link) => (
               <a href={link.url} key={link.title} target="_blank" rel="noopener noreferrer" className="group block">
                 <Card className="!p-3 hover:border-zinc-300 transition-colors flex flex-col h-full">
@@ -308,7 +309,6 @@ export default function MidiaKit() {
                   </div>
                   <div className="mt-auto text-center">
                     <h3 className="font-black text-base text-zinc-900 truncate" title={link.title}>{link.title}</h3>
-                    <p className="text-xs font-medium text-zinc-500 mt-1">Cupom: <span className="font-bold text-zinc-700">{link.code}</span></p>
                   </div>
                 </Card>
               </a>
@@ -396,57 +396,56 @@ export default function MidiaKit() {
       <MoodboardSection />
 
       {/* 9. CONTATO */}
-      <section id="contato" className="max-w-7xl mx-auto px-6 pb-24">
+      <section id="contato" className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <div className="rounded-3xl bg-zinc-900 text-white p-12 lg:p-20 text-center">
-            <h2 className="text-4xl md:text-5xl font-black">Vamos criar algo incrível juntos?</h2>
+          <div className="rounded-[2rem] md:rounded-3xl bg-zinc-900 text-white p-6 sm:p-8 md:p-12 lg:p-20 text-center">
 
-            <p className="mt-6 text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed md:leading-9">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight">
+              Vamos criar algo <br className="block sm:hidden" /> incrível juntos?
+            </h2>
+
+            <p className="mt-4 md:mt-6 text-sm md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed md:leading-9">
               Estou disponível para campanhas, criação de conteúdo, UGC, eventos, lançamentos, restaurantes, hotéis e projetos especiais.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-              <a href="https://instagram.com/nanathsday" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-3xl p-8 border border-white/5">
-                <FaInstagram size={36} className="mx-auto mb-5 text-zinc-400" />
-                <h3 className="font-bold text-xl">Instagram</h3>
-                <p className="text-zinc-300 mt-2">@nanathsday</p>
+            {/* Alterado para grid-cols-3 em TODAS as telas. Gap reduzido para gap-2 no mobile */}
+            <div className="grid grid-cols-3 gap-2 md:gap-6 mt-8 md:mt-14">
+
+              {/* Card 1: Instagram */}
+              <a href="https://instagram.com/nanathsday" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl md:rounded-3xl p-3 md:p-8 border border-white/5 flex flex-col items-center justify-center">
+                <FaInstagram className="w-5 h-5 sm:w-6 sm:h-6 md:w-9 md:h-9 mb-2 md:mb-5 text-zinc-400" />
+                <h3 className="font-bold text-[10px] sm:text-xs md:text-xl">Instagram</h3>
+                <p className="text-zinc-300 mt-0.5 md:mt-2 text-[8px] sm:text-[10px] md:text-base truncate w-full text-center">@nanathsday</p>
               </a>
 
-              <a href="https://tiktok.com/@nanathsday" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-3xl p-8 border border-white/5">
-                <FaTiktok size={36} className="mx-auto mb-5 text-zinc-400" />
-                <h3 className="font-bold text-xl">TikTok</h3>
-                <p className="text-zinc-300 mt-2">@nanathsday</p>
+              {/* Card 2: TikTok */}
+              <a href="https://tiktok.com/@nanathsday" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl md:rounded-3xl p-3 md:p-8 border border-white/5 flex flex-col items-center justify-center">
+                <FaTiktok className="w-5 h-5 sm:w-6 sm:h-6 md:w-9 md:h-9 mb-2 md:mb-5 text-zinc-400" />
+                <h3 className="font-bold text-[10px] sm:text-xs md:text-xl">TikTok</h3>
+                <p className="text-zinc-300 mt-0.5 md:mt-2 text-[8px] sm:text-[10px] md:text-base truncate w-full text-center">@nanathsday</p>
               </a>
 
-              <a href="mailto:contato@nanathsday.com" className="bg-white/10 hover:bg-white/20 transition-colors rounded-3xl p-8 border border-white/5">
-                <Mail size={36} className="mx-auto mb-5 text-zinc-400" />
-                <h3 className="font-bold text-xl">E-mail</h3>
-                <p className="text-zinc-300 mt-2 break-all">contato@nanathsday.com</p>
+              {/* Card 3: E-mail */}
+              <a href="mailto:contato@nanathsday.com" className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl md:rounded-3xl p-3 md:p-8 border border-white/5 flex flex-col items-center justify-center">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 md:w-9 md:h-9 mb-2 md:mb-5 text-zinc-400" />
+                <h3 className="font-bold text-[10px] sm:text-xs md:text-xl">E-mail</h3>
+                <p className="text-zinc-300 mt-0.5 md:mt-2 text-[8px] sm:text-[10px] md:text-base truncate w-full text-center">contato@nanathsday.com</p>
               </a>
 
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 transition-colors rounded-3xl p-8 border border-white/5">
-                <FaWhatsapp size={36} className="mx-auto mb-5 text-zinc-400" />
-                <h3 className="font-bold text-xl">WhatsApp</h3>
-                <p className="text-zinc-300 mt-2">Iniciar conversa</p>
-              </a>
             </div>
           </div>
         </motion.div>
       </section>
 
       {/* 10. RODAPÉ */}
-      <footer className="border-t border-zinc-200 py-12">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-black">nanathsday</h2>
-            <p className="text-zinc-500 mt-2">Marca Pessoal • UGC • Publicidade</p>
-          </div>
-          <div className="flex gap-8 font-semibold text-zinc-600">
-            <a href="https://instagram.com/nanathsday" className="hover:text-zinc-900 transition">Instagram</a>
-            <a href="https://tiktok.com/@nanathsday" className="hover:text-zinc-900 transition">TikTok</a>
-            <a href="mailto:contato@nanathsday.com" className="hover:text-zinc-900 transition">E-mail</a>
-          </div>
-        </div>
+      <footer className="py-8 px-6 bg-black border-t border-white/10 flex flex-col items-center justify-center gap-5 text-center">
+
+
+        {/* Copyright Simples */}
+        <p className="text-zinc-500 text-xs">
+          © {new Date().getFullYear()} Nathália Verri — Todos os direitos reservados.
+        </p>
+
       </footer>
 
       <ScrollToTopButton />
@@ -463,9 +462,9 @@ export function MoodboardSection() {
   });
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-zinc-50 w-full">
+    <section ref={containerRef} className="relative h-[400vh] bg-[#F7F5F2] w-full">
       {/* O top-24 ou pt-24 ajuda a não colar no menu superior do site */}
-      <div className="sticky top-0 pt-24 md:pt-0 h-screen w-full flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto px-4 md:px-6 gap-4 md:gap-16">
+      <div className="sticky top-0 pt-24 md:pt-0 h-screen w-full flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto px-4 md:px-6 gap-4 md:gap-16 pb-18">
 
         {/* Cabeçalho de Texto */}
         <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left z-20">
@@ -508,7 +507,7 @@ export function MoodboardSection() {
                   {/* Foto com aro de Story */}
                   <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[2px] md:p-[3px] flex-shrink-0">
                     <div className="w-full h-full rounded-full border-[2px] md:border-[3px] border-black bg-zinc-800 overflow-hidden">
-                      <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+                      <img src={nanathsdayProfileImage} alt="Profile" className="w-full h-full object-cover" />
                     </div>
                   </div>
                   {/* Números proporcionais */}
@@ -569,7 +568,7 @@ export function MoodboardSection() {
             {/* As animações de imagem surgindo por cima */}
             <AnimatedPost
               src={moodboard3}
-              profileImage={profileImage}
+              profileImage={nanathsdayProfileImage}
               isVideo={true}
               progress={scrollYProgress}
               startIn={0.05} endIn={0.15} startOut={0.25} endOut={0.35}
@@ -577,7 +576,7 @@ export function MoodboardSection() {
 
             <AnimatedPost
               src={moodboard1}
-              profileImage={profileImage}
+              profileImage={nanathsdayProfileImage}
               isVideo={true}
               progress={scrollYProgress}
               startIn={0.35} endIn={0.45} startOut={0.55} endOut={0.65}
@@ -585,7 +584,7 @@ export function MoodboardSection() {
 
             <AnimatedPost
               src={moodboard2}
-              profileImage={profileImage}
+              profileImage={nanathsdayProfileImage}
               isVideo={true}
               progress={scrollYProgress}
               startIn={0.65} endIn={0.75} startOut={0.85} endOut={0.95}
@@ -607,17 +606,17 @@ interface AnimatedPostProps {
   endOut: number;
 }
 
-function AnimatedPost({ 
-  src, 
-  profileImage, 
-  isVideo, 
-  progress, 
-  startIn, 
-  endIn, 
-  startOut, 
-  endOut 
+function AnimatedPost({
+  src,
+  profileImage,
+  isVideo,
+  progress,
+  startIn,
+  endIn,
+  startOut,
+  endOut
 }: AnimatedPostProps) {
-const opacity = useTransform(
+  const opacity = useTransform(
     progress,
     [startIn, endIn, startOut, endOut],
     [0, 1, 1, 0]
