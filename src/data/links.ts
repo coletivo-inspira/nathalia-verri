@@ -51,12 +51,6 @@ export const creatorLinks = [
         url: 'https://holyfoods.com.br/',
     },
     {
-        title: 'PANGEIA96',
-        code: 'NAGALOVE10',
-        image: pangeia96,
-        url: 'https://www.pangeia96.com.br/',
-    },
-    {
         title: 'MAX TITANIUM',
         code: 'MAX10NAGALOVE',
         image: maxTitanium,
@@ -86,7 +80,12 @@ export const creatorLinks = [
         image: gummy,
         url: 'https://www.gummy.com.br/',
     },
-
+    {
+        title: 'PANGEIA96',
+        code: 'NAGALOVE10',
+        image: pangeia96,
+        url: 'https://www.pangeia96.com.br/',
+    },
     {
         title: 'YSY JOIAS',
         code: 'NAGALOVE',
