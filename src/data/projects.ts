@@ -198,8 +198,8 @@ export const projects = [
     year: '2024 - Presente',
     links: [
       { texto: 'Instagram', url: 'https://www.instagram.com/nanathsday/' },
-      { texto: 'Parcerias', url: 'https://nathaliaverri.inspira.dev.br/cupons' },
-      { texto: 'Midia Kit', url: 'https://nathaliaverri.inspira.dev.br/nanathsday/midia-kit' },
+      { texto: 'Parcerias', url: 'https://nathaliaverri.hudilabs.com/cupons' },
+      { texto: 'Midia Kit', url: 'https://nathaliaverri.hudilabs.com/nanathsday/midia-kit' },
     ],
     gallery: [
       {

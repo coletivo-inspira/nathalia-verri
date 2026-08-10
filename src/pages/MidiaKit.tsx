@@ -647,7 +647,7 @@ export function MoodboardSection() {
                   <p className="mb-0.5 md:mb-1 text-zinc-200">☕️ | 𝚖𝚒𝚗𝚍, 𝚋𝚘𝚍𝚢 & 𝚜𝚘𝚞𝚕</p>
                   <p className="mb-0.5 md:mb-1 text-zinc-200">✉️ | 𝚌𝚘𝚗𝚝𝚊𝚝𝚘𝚗𝚊𝚗𝚊𝚝𝚑𝚜𝚍𝚊𝚢@𝚐𝚖𝚊𝚒𝚕.𝚌𝚘𝚖</p>
                   <p className="mb-0.5 md:mb-1 text-zinc-200">🖇️ | 𝚜𝚊𝚟𝚎 𝚑𝚎𝚛𝚎 ↓</p>
-                  <a href="https://nathaliaverri.inspira.dev.br/cupons" className="text-blue-400 font-semibold truncate block w-full">nathaliaverri.inspira.dev.br/cupons</a>
+                  <a href="https://nathaliaverri.hudilabs.com/cupons" className="text-blue-400 font-semibold truncate block w-full">https://nathaliaverri.hudilabs.com/cupons</a>
                 </div>
 
                 {/* Botões de Ação */}
