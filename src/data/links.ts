@@ -65,7 +65,7 @@ export const creatorLinks = [
         url: 'https://www.heymu.com.br/',
     },
     {
-        title: 'Mínima Suplementos',
+        title: 'MÍNIMA SUPLEMENTOS',
         code: 'NANATHS',
         image: minima,
         url: 'https://minimasuplementos.shop/',
