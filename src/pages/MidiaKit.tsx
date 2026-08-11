@@ -548,10 +548,10 @@ export default function MidiaKit() {
               </a>
 
               {/* Card 3: E-mail */}
-              <a href="mailto:contato@nanathsday.com" className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl md:rounded-3xl p-3 md:p-8 border border-white/5 flex flex-col items-center justify-center">
+              <a href="mailto:contatonanathsday@gmail.com" className="bg-white/10 hover:bg-white/20 transition-colors rounded-xl md:rounded-3xl p-3 md:p-8 border border-white/5 flex flex-col items-center justify-center">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 md:w-9 md:h-9 mb-2 md:mb-5 text-zinc-400" />
                 <h3 className="font-bold text-[10px] sm:text-xs md:text-xl">E-mail</h3>
-                <p className="text-zinc-300 mt-0.5 md:mt-2 text-[8px] sm:text-[10px] md:text-base truncate w-full text-center">contato@nanathsday.com</p>
+                <p className="text-zinc-300 mt-0.5 md:mt-2 text-[8px] sm:text-[10px] md:text-base truncate w-full text-center">contatonanathsday@gmail.com</p>
               </a>
 
             </div>

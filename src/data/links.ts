@@ -18,6 +18,8 @@ import heymu from '../assets/partnership_heymu.png';
 import sleepo from '../assets/partnership_sleepo.avif';
 import baw from '../assets/partnership_baw.png';
 import holyfoods from '../assets/partnership_holyfoods.avif';
+import minima from '../assets/partnership_minima.jpg';
+
 
 
 export const socialLinks = [
@@ -56,11 +58,17 @@ export const creatorLinks = [
         image: maxTitanium,
         url: 'https://www.maxtitanium.com.br/',
     },
-    {
+        {
         title: 'HEY!MU',
         code: 'NANATHS',
         image: heymu,
         url: 'https://www.heymu.com.br/',
+    },
+    {
+        title: 'Mínima Suplementos',
+        code: 'NANATHS',
+        image: minima,
+        url: 'https://minimasuplementos.shop/',
     },
     {
         title: 'SLEEPO',
