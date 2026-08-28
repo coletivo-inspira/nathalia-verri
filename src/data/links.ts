@@ -85,6 +85,12 @@ export const creatorLinks = [
         url: 'https://store.cadiveu.com/',
     },
     {
+        title: 'OCEANE',
+        code: 'NANATHS',
+        image: oceane,
+        url: 'https://www.oceane.com.br/',
+    },
+    {
         title: 'GLAM BEAUTY',
         code: 'NAGALOVE',
         image: glam,
@@ -101,12 +107,6 @@ export const creatorLinks = [
         code: 'NAGALOVE10',
         image: pangeia96,
         url: 'https://www.pangeia96.com.br/',
-    },
-    {
-        title: 'OCEANE',
-        code: 'NANATHS',
-        image: oceane,
-        url: 'https://www.oceane.com.br/',
     },
     {
         title: 'DAVENE',
