@@ -20,7 +20,8 @@ import baw from '../assets/partnership_baw.png';
 import holyfoods from '../assets/partnership_holyfoods.avif';
 import minima from '../assets/partnership_minima.jpg';
 import oceane from '../assets/partnership_oceane.jpg';
-
+import cadiveu from '../assets/partnership_cadiveu.png';
+import davene from '../assets/partnership_davene.png';
 
 
 export const socialLinks = [
@@ -78,6 +79,12 @@ export const creatorLinks = [
         url: 'https://sleepo.com.br/',
     },
     {
+        title: 'CADIVEU',
+        code: 'NANATHS',
+        image: cadiveu,
+        url: 'https://store.cadiveu.com/',
+    },
+    {
         title: 'GLAM BEAUTY',
         code: 'NAGALOVE',
         image: glam,
@@ -100,6 +107,12 @@ export const creatorLinks = [
         code: 'NANATHS',
         image: oceane,
         url: 'https://www.oceane.com.br/',
+    },
+    {
+        title: 'DAVENE',
+        code: 'NANATHS',
+        image: davene,
+        url: 'https://www.davene.net.br/',
     },
     {
         title: 'YSY JOIAS',
