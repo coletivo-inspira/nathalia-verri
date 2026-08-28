@@ -19,6 +19,7 @@ import sleepo from '../assets/partnership_sleepo.avif';
 import baw from '../assets/partnership_baw.png';
 import holyfoods from '../assets/partnership_holyfoods.avif';
 import minima from '../assets/partnership_minima.jpg';
+import oceane from '../assets/partnership_oceane.jpg';
 
 
 
@@ -58,7 +59,7 @@ export const creatorLinks = [
         image: maxTitanium,
         url: 'https://www.maxtitanium.com.br/',
     },
-        {
+    {
         title: 'HEY!MU',
         code: 'NANATHS',
         image: heymu,
@@ -93,6 +94,12 @@ export const creatorLinks = [
         code: 'NAGALOVE10',
         image: pangeia96,
         url: 'https://www.pangeia96.com.br/',
+    },
+    {
+        title: 'OCEANE',
+        code: 'NANATHS',
+        image: oceane,
+        url: 'https://www.oceane.com.br/',
     },
     {
         title: 'YSY JOIAS',
