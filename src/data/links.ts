@@ -22,7 +22,9 @@ import minima from '../assets/partnership_minima.jpg';
 import oceane from '../assets/partnership_oceane.jpg';
 import cadiveu from '../assets/partnership_cadiveu.png';
 import davene from '../assets/partnership_davene.png';
-
+import beonstudio from '../assets/partnership_beonstudio.png';
+import aurha from '../assets/partnership_aurha.png';
+aurha
 
 export const socialLinks = [
     {
@@ -48,6 +50,12 @@ export const socialLinks = [
 ];
 
 export const creatorLinks = [
+    {
+        title: 'BEON STUDIOS',
+        code: 'NANATHSDAY10',
+        image: beonstudio,
+        url: 'https://beonstudios.com/',
+    },
     {
         title: 'HOLY FOODS',
         code: 'NAGALOVE',
@@ -107,6 +115,12 @@ export const creatorLinks = [
         code: 'NAGALOVE10',
         image: pangeia96,
         url: 'https://www.pangeia96.com.br/',
+    },
+    {
+        title: 'AURHA',
+        code: 'NANATHSDAY10',
+        image: aurha,
+        url: 'https://aurha.com.br/',
     },
     {
         title: 'DAVENE',
