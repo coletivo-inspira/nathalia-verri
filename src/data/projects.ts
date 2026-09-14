@@ -44,6 +44,12 @@ import midiaRicardoHamdan12 from '../assets/ricardo-hamdan-cozinha-arabe-12.mp4'
 import midiaRicardoHamdan13 from '../assets/ricardo-hamdan-cozinha-arabe-13.mp4';
 import midiaRicardoHamdan14 from '../assets/ricardo-hamdan-cozinha-arabe-14.mp4';
 
+import midiaHotmartFireCover from '../assets/hotmart-fire-cover.png';
+import midiaHotmartFire1 from '../assets/hotmart-fire-social-media-1.jpg';
+import midiaHotmartFire2 from '../assets/hotmart-fire-social-media-2.mp4';
+import midiaHotmartFire3 from '../assets/hotmart-fire-social-media-3.mp4';
+import midiaHotmartFire4 from '../assets/hotmart-fire-social-media-4.mp4';
+
 
 export const projects = [
   //Transfacil
@@ -267,5 +273,62 @@ export const projects = [
       { valor: 'Vitrine', texto: 'Laboratório criativo e portfólio vivo.' },
     ],
   },
+  // --- HOTMART FIRE ---
+  {
+    id: 'hotmart-fire',
+    title: 'Hotmart FIRE',
+    category: 'Evento & Desenvolvimento Profissional',
+    cover: midiaHotmartFireCover,
+    description: 'Participação a convite da Hotmart em um dos principais eventos do mercado digital, com foco em inovação, empreendedorismo, marketing, networking e criação de negócios.',
+    year: '2026',
+    links: [
+      {
+        texto: 'Hotmart FIRE',
+        url: 'https://www.instagram.com/hotmartfire/'
+      }
+    ],
+    gallery: [
+      {
+        media: midiaHotmartFire1,
+        link: 'https://www.instagram.com/p/DdMpw-nkZir/?img_index=1'
+      },
+      {
+        media: midiaHotmartFire2,
+        link: 'https://www.instagram.com/p/DdKkE54NvY1/'
+      },
+      {
+        media: midiaHotmartFire3,
+        link: 'https://www.instagram.com/p/DdJnLw3RsU1/'
+      },
+      {
+        media: midiaHotmartFire4,
+        link: 'https://www.instagram.com/p/DdIBadita27/'
+      },
+    ],
+    content: `
+    Tive a oportunidade de participar do Hotmart FIRE a convite da Hotmart, um dos principais eventos voltados ao mercado digital, inovação, empreendedorismo, marketing e criação de negócios.
 
+    A participação no evento representou uma oportunidade importante para ampliar meu repertório profissional e conhecer de perto diferentes perspectivas e tendências do mercado digital. Durante a experiência, acompanhei conteúdos, palestras e discussões sobre temas relevantes para o cenário atual, além de estar em contato com profissionais e pessoas de diferentes áreas.
+
+    Um dos principais destaques da experiência foi o networking. As conversas e conexões realizadas durante o evento possibilitaram novas trocas de conhecimento, referências e perspectivas, reforçando a importância de construir uma rede profissional ativa e diversa.
+
+    Além dos aprendizados, a participação no FIRE também contribuiu para o desenvolvimento do meu portfólio, trazendo novas referências e experiências que podem ser aplicadas em projetos futuros. Foi uma oportunidade de observar o mercado de forma mais ampla e transformar novas ideias em possibilidades práticas.
+
+    Participar do Hotmart FIRE foi uma experiência de aprendizado, conexão e desenvolvimento profissional, agregando repertório à minha trajetória e ampliando minha visão sobre as possibilidades dentro do mercado digital.
+  `,
+    results: [
+      {
+        valor: 'Convite',
+        texto: 'Participação no evento a convite da Hotmart.'
+      },
+      {
+        valor: 'Networking',
+        texto: 'Conexão com profissionais e diferentes áreas do mercado digital.'
+      },
+      {
+        valor: 'Repertório',
+        texto: 'Novas referências, aprendizados e perspectivas para projetos futuros.'
+      },
+    ],
+  },
 ];
