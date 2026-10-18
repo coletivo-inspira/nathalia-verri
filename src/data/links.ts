@@ -24,7 +24,9 @@ import cadiveu from '../assets/partnership_cadiveu.png';
 import davene from '../assets/partnership_davene.png';
 import beonstudio from '../assets/partnership_beonstudio.png';
 import aurha from '../assets/partnership_aurha.png';
-aurha
+import superagenciabr from '../assets/partnership_superagenciabr.jpg';
+import bizcomunica from '../assets/partnership_bizcomunica.jpg';
+import hotmartfire from '../assets/partnership_hotmartfire.jpg';
 
 export const socialLinks = [
     {
@@ -49,7 +51,41 @@ export const socialLinks = [
     },
 ];
 
-export const creatorLinks = [
+/**
+ * Onde cada item aparece:
+ *  - 'cupom'    -> só na página de cupons (BioLink)
+ *  - 'parceria' -> só nas "Parcerias Recentes" do Media Kit
+ *  - 'ambos'    -> nos dois (padrão quando `type` é omitido)
+ */
+export type CreatorLinkType = 'cupom' | 'parceria' | 'ambos';
+
+export interface CreatorLink {
+    title: string;
+    code?: string;
+    image?: string;
+    url: string;
+    type?: CreatorLinkType;
+}
+
+const allCreatorLinks: CreatorLink[] = [
+    {
+        title: 'SUPER AGÊNCIA BR',
+        image: superagenciabr,
+        url: 'https://www.instagram.com/superagenciabr',
+        type: 'parceria',
+    },
+    {
+        title: 'BIZ COMUNICA',
+        image: bizcomunica,
+        url: 'https://www.instagram.com/bizcomunica',
+        type: 'parceria',
+    },
+    {
+        title: 'HOTMART FIRE',
+        image: hotmartfire,
+        url: 'https://www.instagram.com/hotmartfire',
+        type: 'parceria',
+    },
     {
         title: 'BEON STUDIOS',
         code: 'NANATHSDAY10',
@@ -174,3 +210,12 @@ export const creatorLinks = [
         url: 'https://bemvivertapetearte.com.br/',
     },
 ];
+
+const isType = (l: CreatorLink, t: 'cupom' | 'parceria') =>
+    (l.type ?? 'ambos') === 'ambos' || l.type === t;
+
+/** Lista da página de cupons (BioLink) */
+export const creatorLinks = allCreatorLinks.filter((l) => isType(l, 'cupom'));
+
+/** Lista de "Parcerias Recentes" do Media Kit */
+export const partnerships = allCreatorLinks.filter((l) => isType(l, 'parceria'));

@@ -23,7 +23,7 @@ import { useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, MoreHorizontal, Grid, Film, UserSquare } from "lucide-react";
 
 // Importações (Ajuste os caminhos conforme a estrutura do seu projeto)
-import { creatorLinks } from "../data/links";
+import { partnerships } from "../data/links";
 import heroImage from "../assets/partnership_image.jpg";// Imagem principal do portfólio
 import aboutImage from "../assets/1.jpeg";
 import instagram from "../assets/instagram.png";
@@ -248,15 +248,15 @@ export default function MidiaKit() {
                           <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Seguidores</span>
                         </div>
                         <div>
-                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">17.5%</p>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">22.8%</p>
                           <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide">Engajamento</span>
                         </div>
                         <div>
-                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">+33K</p>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">+155K</p>
                           <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide block leading-tight mt-1">Visualizações<br />(Últ. 30 dias)</span>
                         </div>
                         <div>
-                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">1.7K</p>
+                          <p className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900">92K</p>
                           <span className="text-[10px] md:text-xs text-zinc-500 uppercase font-semibold tracking-wide block leading-tight mt-1">Views<br />Stories</span>
                         </div>
                       </div>
@@ -408,22 +408,28 @@ export default function MidiaKit() {
       </section>
 
 {/* 5. PROJETOS / PORTFÓLIO */}
-{creatorLinks && creatorLinks.length > 0 && (
+{partnerships.length > 0 && (
   <section className="max-w-7xl mx-auto px-4 md:px-6 pb-24">
     <SectionTitle>Parcerias Recentes</SectionTitle>
     
     <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
-      {creatorLinks.map((link) => (
+      {partnerships.map((link) => (
         <a href={link.url} key={link.title} target="_blank" rel="noopener noreferrer" className="group block">
           <Card className="!p-2 md:!p-4 hover:border-zinc-300 transition-colors flex flex-col items-center shadow-none border-transparent hover:border-zinc-200">
             
             {/* Adicionado border-[2px] border-zinc-900 */}
             <div className="w-full aspect-square rounded-full overflow-hidden mb-3 bg-zinc-100 relative border-[2px] border-zinc-900">
-              <img 
-                src={link.image} 
-                alt={link.title} 
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-              />
+              {link.image ? (
+                <img
+                  src={link.image}
+                  alt={link.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center font-black text-zinc-700 text-lg md:text-2xl">
+                  {link.title.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                </div>
+              )}
             </div>
 
             <div className="text-center w-full">
